@@ -1,4 +1,4 @@
-/*eader{
+/*header{
     background-color:grey;
     margin:auto;
     color:white;
@@ -7,10 +7,13 @@
     display:block;  
 }
 */
+body{
+    
+}
 logo,nav{display:inline }
 nav ul {
     list-style-type: none;
-  margin: 0;
+  margin: auto;
   padding: 0;
    background-color:gray;
    overflow:hidden;
@@ -27,7 +30,8 @@ nav li a {
   text-decoration: none;
 }
 nav li a:hover:not(.active) {
-  background-color: yellow;
+  background-color:white;
+  color:black;
 }
 
 .active {
@@ -45,5 +49,39 @@ nav li a:hover:not(.active) {
     vertical-align: middle;
     margin-right: 10px;
 }
+.footer {
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: gray;
+   color: white;
+   text-align: center;
+}
+.first-column {
+    width: 66%;
+    padding: 0 10px 0 0;
+    float: left;
+}
 
+.second-column {
+    width: 33%;
+    padding: 0 10px 0 0;
+    float: right;
+}
 
+@media only screen and (max-width: 800px) {
+
+   .first-column {
+        width: 100%;
+        padding-bottom: 10px;
+        float: none;
+    }
+
+    .second-column {
+        width: 100%;
+        padding-bottom: 10px;
+        float: none;
+    }
+    
+}
