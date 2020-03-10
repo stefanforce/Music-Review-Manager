@@ -1,87 +1,70 @@
-/*header{
-    background-color:grey;
-    margin:auto;
-    color:white;
-    font-size:18px;
-    background-attachment:fixed;
-    display:block;  
+#logo img{
+height:100px;
+margin:auto;
+float:left;
 }
-*/
-body{
-    
+
+nav{
+display:inline;
 }
-logo,nav{display:inline }
-nav ul {
-    list-style-type: none;
-  margin: auto;
-  padding: 0;
-   background-color:gray;
-   overflow:hidden;
+
+nav ul{
+list-style-type: none;
+margin: auto;
+padding: 0;
+background-color:black;
+overflow:hidden;
 }
 
 nav li{
 float:left;
 }
-nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-nav li a:hover:not(.active) {
-  background-color:white;
-  color:black;
+
+nav li a{
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
 }
 
-.active {
-  background-color: green;
-}
-#logo {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 30px;
-    margin-right: 0px;
-    color: #FFF;
-}
-#logo img {
-    width: 50px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-.footer {
-  position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: gray;
-   color: white;
-   text-align: center;
-}
-.first-column {
-    width: 66%;
-    padding: 0 10px 0 0;
-    float: left;
+nav li a:hover:not(.active){
+background-color:white;
+color:black;
 }
 
-.second-column {
-    width: 33%;
-    padding: 0 10px 0 0;
-    float: right;
+.active{
+background-color: green;
 }
 
-@media only screen and (max-width: 800px) {
+.footer{
+position: fixed;
+left: 0;
+bottom: 0;
+height:30px;
+width: 100%;
+background-color: black;
+color: white;
+text-align: center;
+font-size:x-small;
+}
 
-   .first-column {
-        width: 100%;
-        padding-bottom: 10px;
-        float: none;
-    }
+.first-column{
+margin-left: 10px;
+margin-top: 10px;
+text-align:center;
+width: 50%;
+float: left;
+border-radius: 15px; 
+border: 3px ridge black;
+list-style-position: inside;
+}
 
-    .second-column {
-        width: 100%;
-        padding-bottom: 10px;
-        float: none;
-    }
-    
+.second-column{
+width: 30%;
+margin-top:10px;
+text-align:center;
+float: right;
+border-radius: 15px; 
+border: 3px outset black;
 }
