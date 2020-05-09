@@ -9,4 +9,4 @@ Leuciuc Andrei, Tiperciuc Stefan
 
 Coordonator laborator - Varlan Cosmin
 
-LIVE PREVIEW : https://htmlpreview.github.io/?https://github.com/stefanforce/Music-Review-Manager/blob/master/ProiectTW.html
+LIVE PREVIEW (XAMPP de pe PC-ul propriu, nu va fi online mereu) : http://cubiclemon.go.ro/tw/MrM/
