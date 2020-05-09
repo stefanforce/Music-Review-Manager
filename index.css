@@ -1,0 +1,55 @@
+header{
+    display: flex;
+	flex-direction: row;
+    flex-wrap: nowrap;
+    width:100%;
+}
+
+.logo{
+    order: 0;
+}
+
+.logo img{
+    width: 100px;
+    height: auto;
+}
+
+.nav{
+    order: 1;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.top_links{
+    
+    list-style: none;
+    padding: 0;
+    background-color:black;
+}
+
+.top_links li{
+    
+    align-content: center;
+    padding: 0;
+}
+
+.top_links li a{
+color: white;
+text-align: center;
+text-decoration: none;
+}
+
+.top_links li a:hover:not(.active){
+background-color:white;
+color:black;
+}
+
+
+.first-column{
+margin-left: 10px;
+margin-top: 10px;
+text-align:center;
+border-radius: 15px; 
+border: 3px ridge black;
+}
