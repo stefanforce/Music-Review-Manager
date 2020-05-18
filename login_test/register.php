@@ -14,7 +14,11 @@
   	<?php include('errors.php'); ?>
   	<div class="input-group">
   	  <label>Username</label>
-  	  <input type="text" name="username" pattern="[A-Za-z0-9._-]{4,32}" title="4-32 alphanumerics or (. / _ / -)" value="<?php echo $username; ?>">
+  	  <input type="text" name="username" pattern="[A-Za-z0-9._-]{4,32}" title="4-32 alphanumerics or (. / _ / -)">
+  	</div>
+	<div class="input-group">
+  	  <label>E-mail</label>
+  	  <input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Your email adress (won't be checked)">
   	</div>
   	<div class="input-group">
   	  <label>Password</label>

@@ -12,10 +12,8 @@ $session = new SpotifyWebAPI\Session(
 $session->requestCredentialsToken();
 $accessToken = $session->getAccessToken();
 
-// Store the access token somewhere. In a database for example.
 $_SESSION["spotifytoken"]=$accessToken;
 
-// Send the user along and fetch some data!
 header('Location: search_box.php');
 die();
 ?>
