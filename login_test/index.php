@@ -18,6 +18,9 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<a href="../index.html">Homepage</a>
+<br>
+<a href="../spotify/spotify_auth.php">Search</a>
 
 <div class="header">
 	<h2>Home Page</h2>

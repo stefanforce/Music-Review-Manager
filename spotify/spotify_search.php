@@ -34,11 +34,20 @@ img {
   max-width:250px;
 }
 a {
+  color:red;
+  text-decoration:none;
   font-size:large;
+}
+a:visited {
+  color:red;
+}
+.searched_for {
+text-align:center;
+}
 }
 </style>';
 echo '</head><body>';
-echo 'Searched for ', $query_type, ' : ', $query, '<br><br>';
+echo '<div class="searched_for"><h2>', 'Searched for ', $query_type, ' : ', $query, '</h2></div><br><br>';
 $results = $api->search($query, $query_type);
 
 
@@ -63,21 +72,11 @@ foreach ($results->artists->items as $resitem) {
 
 	echo '<br><br>';
 
-	echo '<label for="my_checkbox"> Write a review </label>';
+	$review_link='review.php' . '?type=' . $query_type . '&id=' . $resitem->id;
 
-	echo '<input type="checkbox" id="my_checkbox">';
+	echo '<a href=', $review_link ,'>', 'See reviews and write your own', '</a>';
 
-	echo '<div id="hidden"><br>';
-
-	if (isset($_SESSION['username'])){
-    echo '<span>Writing a review for ', $resitem->name, ' (please limit yourself to 1000 characters)', '</span><br><br>';
-	echo '<textarea id="write_review" rows="20" cols="60" maxlength="1000">Share your opinion !</textarea>';
-	echo '<br><br><button type="button">Send review !</button>';
-	}
-	else {
-	echo '<span>You need to be logged in to write reviews</span><br>';
-	}
-	echo '</div></div><br>';
+	echo '</div><br>';
 }
 }
 
@@ -102,22 +101,12 @@ foreach ($results->albums->items as $resitem) {
 	echo '<img src="', $image, '" alt="Album image">';
 
 	echo '<br><br>';
-
-	echo '<label for="my_checkbox"> Write a review </label>';
 	
-	echo '<input type="checkbox" id="my_checkbox">';
+	$review_link='review.php' . '?type=' . $query_type . '&id=' . $resitem->id;
 
-	echo '<div id="hidden"><br>';
-
-	if (isset($_SESSION['username'])){
-    echo '<span>Writing a review for ', $resitem->name, ' (please limit yourself to 1000 characters)', '</span><br><br>';
-	echo '<textarea id="write_review" rows="20" cols="60" maxlength="1000">Share your opinion !</textarea>';
-	echo '<br><br><button type="button">Send review !</button>';
-	}
-	else {
-	echo '<span>You need to be logged in to write reviews</span><br>';
-	}
-	echo '</div></div><br>';
+	echo '<a href=', $review_link ,'>', 'See reviews and write your own', '</a>';
+	
+	echo '</div><br>';
 }
 }
 
@@ -141,23 +130,14 @@ foreach ($results->tracks->items as $resitem) {
 	else {
 	echo 'Sorry, no audio preview available 😞';
 	}
+
 	echo '<br><br>';
-
-	echo '<label for="my_checkbox"> Write a review </label>';
 	
-	echo '<input type="checkbox" id="my_checkbox">';
+	$review_link='review.php' . '?type=' . $query_type . '&id=' . $resitem->id;
 
-	echo '<div id="hidden"><br>';
-
-	if (isset($_SESSION['username'])){
-    echo '<span>Writing a review for ', $resitem->name, ' (please limit yourself to 1000 characters)', '</span><br><br>';
-	echo '<textarea id="write_review" rows="20" cols="60" maxlength="1000">Share your opinion !</textarea>';
-	echo '<br><br><button type="button">Send review !</button>';
-	}
-	else {
-	echo '<span>You need to be logged in to write reviews</span><br>';
-	}
-	echo '</div></div><br>';
+	echo '<a href=', $review_link ,'>', 'See reviews and write your own', '</a>';
+	
+	echo '</div><br>';
 }
 }
 

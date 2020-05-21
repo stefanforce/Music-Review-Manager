@@ -53,9 +53,10 @@
 <p><b>Change password</b>   </p>
 <form method="post" action="ProfilePage.php">
 <?php
+include_once '../login_test/mailer.php';
 $errors = array(); 
 $db = mysqli_connect('localhost:3306', 'root', '', 'tw');
-if (isset($_POST['reg_user'])) {
+if (isset($_POST['change_pass'])) {
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
     $current_password = mysqli_real_escape_string($db, $_POST['current_password']);
@@ -69,18 +70,25 @@ if (isset($_POST['reg_user'])) {
    if (count($errors) == 0) {
     $cp=md5($current_password);
     $user=$_SESSION['username'];
+	$query= "SELECT email FROM users WHERE username='$user'";
+	$result = mysqli_query($db, $query);
+	$row = mysqli_fetch_assoc($result);
+    $email=$row["email"];
     $query = "SELECT * FROM users WHERE username='$user' AND passcode='$cp'";
     $results = mysqli_query($db, $query);
     if (mysqli_num_rows($results) == 1) {
     $password = md5($password_1);
     $query = "UPDATE users SET passcode='$password' WHERE username = '$user'";
     mysqli_query($db, $query);}
+    $change_password_title = "Hey '$user', your password at MusicReviewManager has been changed!";
+    $change_password_body = "Your password has been changed! If it wasn't you who did it, contact us at musicreviewmanager@gmail.com!";
+    sendMail($email,$user,$change_password_title,$change_password_body);
 }
 }
 ?>
 <?php 
 $errors = array();
-include('../login_test/errors.php'); 
+include_once('../login_test/errors.php'); 
  ?>
 <div class="input-group">
   	  <label>Current Password</label>
@@ -95,7 +103,61 @@ include('../login_test/errors.php');
   	  <input type="password" name="password_2" title="Must match password above">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Change password</button>
+  	  <button type="submit" class="btn" name="change_pass">Change password</button>
+  	</div>
+
+
+</form>
+
+<p><b>Change email</b>   </p>
+<form method="post" action="ProfilePage.php">
+<?php
+include_once '../login_test/mailer.php';
+$errors = array(); 
+$db = mysqli_connect('localhost:3306', 'root', '', 'tw');
+if (isset($_POST['change_mail'])) {
+    $email_1 = mysqli_real_escape_string($db, $_POST['email_1']);
+    $email_2 = mysqli_real_escape_string($db, $_POST['email_2']);
+    $current_email = mysqli_real_escape_string($db, $_POST['current_email']);
+   
+    if (empty($email_1)) { echo("Email is required\n");echo "<br>"; }
+    if ($email_1 != $email_2) {
+    echo("The emails don't match\n");
+    echo "<br>";
+   }
+   
+   if (count($errors) == 0) {
+    $user=$_SESSION['username'];
+    $query = "SELECT * FROM users WHERE username='$user' AND email='$current_email'";
+    $results = mysqli_query($db, $query);
+    if (mysqli_num_rows($results) == 1) {
+    $query = "UPDATE users SET email='$email_1' WHERE username = '$user'";
+    mysqli_query($db, $query);}
+    
+    $change_email_title = "Hey '$user', your email at MusicReviewManager has been changed!";
+    $change_email_body = "Your email has been changed to '$email_1'! If it wasn't you who did it, contact us at musicreviewmanager@gmail.com!";
+    sendMail($current_email,$user,$change_email_title,$change_email_body);
+}
+}
+?>
+<?php 
+$errors = array();
+include_once('../login_test/errors.php');
+ ?>
+<div class="input-group">
+  	  <label>Current Email</label>
+      <input type="email" name="current_email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Your email adress (won't be checked)">
+  	</div>
+  	<div class="input-group">
+  	  <label>Email</label>
+  	  <input type="email" name="email_1" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Post new email adress here">
+  	</div>
+  	<div class="input-group">
+  	  <label>Confirm Email</label>
+  	  <input type="email" name="email_2" title="Must match email above">
+  	</div>
+  	<div class="input-group">
+  	  <button type="submit" class="btn" name="change_mail">Change email</button>
   	</div>
 
 
