@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/vendor/autoload.php";
 require($path);

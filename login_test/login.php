@@ -3,10 +3,38 @@
 <html>
 <head>
   <title>Login page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../index.css">
 </head>
 <body>
-  <a href="../index.html">Homepage</a>
+  <header class="main-header">
+			<div class="container">
+				<h1 class="mh-logo">
+					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
+					<h1> Music Review Manager </h1>
+				</h1>
+				<nav class="main-nav">
+					<ul class="main-nav-list">
+                        <li><a href="../index.php">Home</a>
+                        
+						<?php 
+						if (session_status() == PHP_SESSION_NONE) {
+						session_start();
+						}
+						if (!isset($_SESSION['username'])) {
+                        echo '<li><a href="index.php">Login</a>';
+						echo '<li><a href="register.php">Register</a>';
+						}
+						else {
+						echo '<li><a href="../profile/profilepage.php">My Profile</a>';
+						}
+						?>
+
+                        <li><a href="../spotify/spotify_auth.php">Search</a>
+                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+					</ul>
+				</nav>
+			</div>
+  </header>
   <div class="header">
   	<h2>Login</h2>
   </div>

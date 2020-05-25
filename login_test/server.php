@@ -1,7 +1,9 @@
 <?php
 include_once 'mailer.php';
 include_once 'welcome_message.php';
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 
 $username = "";
 $errors = array(); 
@@ -66,7 +68,7 @@ if (isset($_POST['login_user'])) {
 	  $query = "UPDATE users SET 
   			  last_login=CURRENT_TIMESTAMP where username='$username'";
   	  mysqli_query($db, $query);
-  	  header('location: index.php');
+  	  header('location: ../profile/profilepage.php');
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}

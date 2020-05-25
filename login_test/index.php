@@ -1,5 +1,7 @@
 <?php 
-  session_start(); 
+  if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+  } 
 
   if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
@@ -15,16 +17,40 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../index.css">
 </head>
 <body>
-<a href="../index.html">Homepage</a>
-<br>
-<a href="../spotify/spotify_auth.php">Search</a>
+<header class="main-header">
+			<div class="container">
+				<h1 class="mh-logo">
+					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
+					<h1> Music Review Manager </h1>
+				</h1>
+				<nav class="main-nav">
+					<ul class="main-nav-list">
+                        <li><a href="../index.php">Home</a>
+                        
+						<?php 
+						if (session_status() == PHP_SESSION_NONE) {
+						session_start();
+						}
+						if (!isset($_SESSION['username'])) {
+                        echo '<li><a href="index.php">Login</a>';
+						echo '<li><a href="register.php">Register</a>';
+						}
+						else {
+						echo '<li><a href="../profile/profilepage.php">My Profile</a>';
+						}
+						?>
 
-<div class="header">
-	<h2>Home Page</h2>
-</div>
+                        <li><a href="../spotify/spotify_auth.php">Search</a>
+                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+					</ul>
+				</nav>
+			</div>
+</header>
+
+
 <div class="content">
   	<?php if (isset($_SESSION['success'])) : ?>
       <div class="error success" >
@@ -40,7 +66,6 @@
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
     	<p> <a href="index.php?logout='1'" style="color: red;">Logout</a> </p>
-		<br>
 		<p> <a href="../profile/ProfilePage.php" style="color: blue;">My Profile</a/></p>
     <?php endif ?>
 </div>

@@ -9,6 +9,10 @@
     background: black;
     color: #FFF;
 }
+img {
+    width:20%;
+    height:auto;
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -18,12 +22,23 @@ html, body {
     color:	black;
     background: #E8E8E8;
 }
-
 .main-header {
     background: #FFF;
+    border-style: solid;
+    border-width: 4px 2px;
+    border-color: rgb(70, 70, 70);
 }
 .mh-logo {
-    margin: 0 0 -10px;
+    margin: 0 0 0 0;
+    max-height:100px;
+    margin-top:5px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:5px;
+}
+.mh-logo img {
+    width:100px;
+    height:auto;
 }
 .main-nav a {
     font-size: 120%;
@@ -39,8 +54,6 @@ html, body {
 	margin-top: 4em;
     text-align: center;
 }
-
-}
 .main-nav ul a {
     color: black;
     text-align: center;
@@ -51,17 +64,13 @@ html, body {
     background-color:black;
     color:white;
 }
-img {
-    max-width: 100%;
-    height: auto;
-}
 .container {
     max-width: 100%;
     padding: 5px;
     margin-left:0;
     margin-right:0;
 }
-.container h1 {
+.container p {
 	text-align:center;
 	font-size: 40px;
 }
@@ -82,7 +91,6 @@ img {
     display: inline-block;
     padding: .5em 1.5em;
 }
-
 .page-content{
     margin-left: 10px;
     margin-top: 10px;
@@ -92,42 +100,21 @@ img {
     border: 3px ridge black;
 	line-height: 90%;
 }
-
 .page-content p{
 	font-size:15 px;
 }
-
-.search-container {
-	float: right;
+.result, .review, .writer {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.writer h3, .writer p{
+    margin-left:1%;
 }
 .input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
     border: none;
-}
-.search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
-.search-container button:hover {
-    background: #ccc;
-}
-.search-container img{
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;    
 }
 .bottom-text {
 	text-align:center;
@@ -140,15 +127,4 @@ img {
     .main-header .container {
         justify-content: space-between;
     }
-    .search-container button {
-        float: none;
-        display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
-      }
-      .input[type=text] {
-        border: 1px solid #ccc;  
-      }
 }

@@ -13,6 +13,7 @@ $current_user=$current_user[0];
 $search_type=$_POST['type'];
 $search_id=$_POST['id'];
 $review_text=$_POST['write_review'];
+$review_text=strip_tags($review_text);
 
 $review_query="INSERT INTO REVIEWS (USER_ID,TYPE,ENTITY_ID,TEXT) VALUES ('$current_user','$search_type','$search_id','$review_text')";
 mysqli_query($db, $review_query);

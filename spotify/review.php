@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/vendor/autoload.php";
 require($path);
@@ -18,6 +20,7 @@ $search_type=$_GET['type'];
 $search_id=$_GET['id'];
 
 echo '<html><head>';
+echo '<link rel="stylesheet" type="text/css" href="../index.css">';
 echo '<style>
 img {
   width:100%;
@@ -38,10 +41,55 @@ margin:auto;
 text-align:center;
 }
 textarea {
-width:100%;
+resize:none;
+width:98%;
+margin-left:1%;
+margin-right:1%;
+}
+.writer {
+font-size:large;
+color:white;
+background-color:black;
+}
+input[type=submit] {
+cursor:pointer;
+color:white;
+background-color:black;
+border:3px solid white;
+margin-left:1%;
 }
 </style>';
 echo '</head><body>';
+
+echo '<header class="main-header">
+			<div class="container">
+				<h1 class="mh-logo">
+					<img src="../icons/logo.png" width="100" height="100" alt="logo">
+					<h1> Music Review Manager </h1>
+				</h1>
+				<nav class="main-nav">
+					<ul class="main-nav-list">
+                        <li><a href="../index.php">Home</a>';
+
+						
+						if (session_status() == PHP_SESSION_NONE) {
+						session_start();
+						}
+						if (!isset($_SESSION['username'])) {
+                        echo '<li><a href="../login_test/index.php">Login</a>';
+						echo '<li><a href="../login_test/register.php">Register</a>';
+						}
+						else {
+						echo '<li><a href="../profile/profilepage.php">My Profile</a>';
+						}
+						
+
+                        echo '<li><a href="spotify_auth.php">Search</a>
+                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+					</ul>
+				</nav>
+			</div>
+		</header>';
 
 if ($search_type=='artist'){
 $result=$api->getArtist($search_id);
@@ -61,6 +109,7 @@ $db = mysqli_connect('localhost:3306', 'root', '', 'TW');
 
 if ($search_type=='artist'){
 echo '<div class="result">';
+echo '<br>';
 echo '<p>You are viewing reviews for </p>';
 echo '<a href=', $result->uri, '>', $result->name, '</a>';
 echo '<br><br>';
@@ -78,7 +127,9 @@ echo '</div><br>';
 
 else if ($search_type=='album'){
 echo '<div class="result">';
-echo '<a href=', $result->uri, '>', 'You are viewing reviews for ', $result->name, '</a>', ' by ';
+echo '<br>';
+echo '<p>You are viewing reviews for </p>';
+echo '<a href=', $result->uri, '>', $result->name, '</a>', ' by ';
 foreach($result->artists as $author) {echo '<a href=', $author->uri, '>', $author->name, '</a>', '  ';}
 echo '<br><br>';
 if (empty($result->images)){
@@ -95,8 +146,11 @@ echo '</div><br>';
 
 else if ($search_type=='track'){
 echo '<div class="result">';
-echo '<a href=', $result->uri, '>', 'You are viewing reviews for ', $result->name, '</a>', ' by ';
+echo '<br>';
+echo '<p>You are viewing reviews for </p>';
+echo '<a href=', $result->uri, '>', $result->name, '</a>', ' by ';
 foreach($result->artists as $author) {echo '<a href=', $author->uri, '>', $author->name, '</a>', '  ';}
+echo 'on <a href=', $result->album->uri, '>', $result->album->name, '</a>';
 echo '<br><br>';
 if (!empty($result->preview_url)){
 $mp3 = $result->preview_url;
@@ -105,7 +159,7 @@ echo $mp3, '" type="audio/mpeg">';
 echo 'Your browser does not support the audio element. </audio>';
 }
 else {
-echo 'Sorry, no audio preview available đźž';
+echo 'Sorry, no audio preview available :(';
 }
 echo '<br><br>';
 echo '</div><br>';
@@ -113,7 +167,7 @@ echo '</div><br>';
 
 echo '<hr>';
 
-$query = "SELECT * FROM REVIEWS WHERE TYPE='$search_type' AND ENTITY_ID='$search_id'";
+$query = "SELECT * FROM REVIEWS WHERE TYPE='$search_type' AND ENTITY_ID='$search_id' ORDER BY ID DESC";
 $results = mysqli_query($db, $query);
 if ($results->num_rows > 0) {
   while($row = $results->fetch_assoc()) {
@@ -134,10 +188,11 @@ if ($results->num_rows > 0) {
   echo '<hr></div>';
 }
 
-echo '<div class="writer">';
+echo '<div class="writer"><br>';
 
 if (isset($_SESSION['username'])){
-    echo '<p><h3>Write a review for ', $result->name, '</h3> (please limit yourself to 5000 characters)', '</p><br>';
+    echo '<h3>Write a review for ', $result->name, '</h3>';
+	echo '<p>(max 5000 characters, tags will be removed)', '</p><br>';
 	echo '<form method="POST" action="review-sender.php">';
 	echo '<input type="hidden" name="username" value=', $username, '>';
 	echo '<input type="hidden" name="type" value=', $search_type, '>';
@@ -152,7 +207,7 @@ if (isset($_SESSION['username'])){
 	echo ' to write reviews</h3><br>';
 	}
 
-echo '</div><br>';
+echo '<br></div><br>';
 
 }
 
