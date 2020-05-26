@@ -36,7 +36,9 @@
 				</nav>
 			</div>
 </header>
+<br>
 
+<div class="page-content">
 <h2>Search</h2>
 <form method="post" action="spotify_search.php">
 	<label for="search_type">Artist/Album/Track</label>
@@ -45,7 +47,7 @@
 		<option value="album">Album</option>
 		<option value="track">Track</option>
 	</select>
-	<br>
+	<br><br>
   	<div class="input-group">
   	  <label>Query</label>
   	  <input type="text" name="query" pattern="[A-Za-z0-9._- ]{1,64}" title="Maximum 64 alphanumerics or (. / _ / -)">
@@ -55,5 +57,6 @@
   	  <button type="submit" class="btn" name="spotify_search">Search</button>
   	</div>
 </form>
+</div>
 </body>
 </html>

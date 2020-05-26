@@ -47,6 +47,8 @@ a:visited {
 .searched_for {
 text-align:center;
 }
+hr {
+width:95%;
 }
 </style>';
 echo '</head><body>';
@@ -80,6 +82,7 @@ echo '<header class="main-header">
 			</div>
 		</header>';
 echo '<div class="searched_for"><h2>', 'Searched for ', $query_type, ' : ', $query, '</h2></div>';
+echo '<div class="page-content">';
 $results = $api->search($query, $query_type);
 
 
@@ -106,7 +109,7 @@ foreach ($results->artists->items as $resitem) {
 
 	$review_link='review.php' . '?type=' . $query_type . '&id=' . $resitem->id;
 
-	echo '<a href=', $review_link ,'>', 'See reviews and write your own', '</a>';
+	echo '<br><p><a href=', $review_link ,'>', 'See reviews and write your own', '</a></p>';
 
 	echo '</div><br>';
 }
@@ -136,7 +139,7 @@ foreach ($results->albums->items as $resitem) {
 	
 	$review_link='review.php' . '?type=' . $query_type . '&id=' . $resitem->id;
 
-	echo '<a href=', $review_link ,'>', 'See reviews and write your own', '</a>';
+	echo '<br><p><a href=', $review_link ,'>', 'See reviews and write your own', '</a></p>';
 	
 	echo '</div><br>';
 }
@@ -167,12 +170,13 @@ foreach ($results->tracks->items as $resitem) {
 	
 	$review_link='review.php' . '?type=' . $query_type . '&id=' . $resitem->id;
 
-	echo '<a href=', $review_link ,'>', 'See reviews and write your own', '</a>';
+	echo '<br><p><a href=', $review_link ,'>', 'See reviews and write your own', '</a></p>';
 	
 	echo '</div><br>';
 }
 }
 
+echo '</div><br>';
 }
 }
 else {

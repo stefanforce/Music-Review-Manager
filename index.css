@@ -5,6 +5,9 @@
     background: black;
     color: #FFF;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 ::selection {
     background: black;
     color: #FFF;
@@ -21,6 +24,8 @@ html, body {
     line-height: 1.5;
     color:	black;
     background: #E8E8E8;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 .main-header {
     background: #FFF;
@@ -96,7 +101,7 @@ html, body {
     margin-top: 10px;
     margin-right:10px;
     text-align:center;
-    border-radius: 75px; 
+    border-radius: 50px; 
     border: 3px ridge black;
 	line-height: 90%;
 }
@@ -106,6 +111,35 @@ html, body {
 .result, .review, .writer {
     margin-left: 1%;
     margin-right: 1%;
+}
+.result p a{
+    color:white;
+    border-style:solid;
+    border-color:gray;
+    border-width:5px;
+    border-radius:10px;
+    padding:10px;
+    background: black;
+    background-clip: padding-box;
+}
+.review hr{
+    width:98%;
+}
+.review input[type=submit]{
+    font-size:15px;
+    padding:5px;
+    cursor: pointer;
+    border-style: solid;
+    border-color:gray;
+    border-width: 5px;
+    border-radius: 10px;
+    background: red;
+    background-clip: padding-box;
+}
+.writer {
+    border-style:solid;
+    border-color:grey;
+    border-width:4px;
 }
 .writer h3, .writer p{
     margin-left:1%;

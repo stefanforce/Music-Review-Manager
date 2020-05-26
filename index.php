@@ -54,12 +54,12 @@
 <p>☒ Track 30 second preview
 <p>☒ Review submitting and reading
 <p>☒ Simple user control panel (change password/mail)
+<p>☒ Review deletion
+<p>☒ In-depth security testing
 <p>☐ Review RSS feed
 <p>☐ Favorites section
 <p>☐ Full metadata
-<p>☐ Review deletion/editing
 <p>☐ Searchable/linkable public user pages
-<p>☐ Security testing
 <br>
 </div>
 <br><br>

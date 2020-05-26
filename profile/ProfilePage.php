@@ -57,6 +57,9 @@
 			</div>
  </header>
 
+<br>
+
+<div class="page-content">
 <div class="first-column">
 <?php  if (isset($_SESSION['username'])) : ?>
     	<h1>Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
@@ -66,8 +69,7 @@
 </div>
 
 
-
-<p><b>Change password</b>   </p>
+<h3>Change password</h3>
 <form method="post" action="ProfilePage.php">
 <?php
 include_once '../login_test/mailer.php';
@@ -78,11 +80,14 @@ if (isset($_POST['change_pass'])) {
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
     $current_password = mysqli_real_escape_string($db, $_POST['current_password']);
    
-    if (empty($password_1)) { echo("Password is required\n");echo "<br>"; }
-   if ($password_1 != $password_2) {
-    echo("The passwords don't match\n");
-    echo "<br>";
-   }
+    if (empty($password_1)) {
+	echo '<span style="color:red">A new password is required !';
+    echo '</span><br><br>'; 
+	}
+    if ($password_1 != $password_2) {
+    echo '<span style="color:red">The passwords do not match !';
+    echo '</span><br><br>';
+	}
    
    if (count($errors) == 0) {
     $cp=md5($current_password);
@@ -111,14 +116,17 @@ include_once('../login_test/errors.php');
   	  <label>Current Password</label>
   	  <input type="password" name="current_password" pattern="[A-Za-z0-9._-]{6,32}" title="6-32 alphanumerics or (. / _ / -)">
   	</div>
+	<br>
   	<div class="input-group">
   	  <label>Password</label>
   	  <input type="password" name="password_1" pattern="[A-Za-z0-9._-]{6,32}" title="6-32 alphanumerics or (. / _ / -)">
   	</div>
+	<br>
   	<div class="input-group">
   	  <label>Confirm password</label>
   	  <input type="password" name="password_2" title="Must match password above">
   	</div>
+	<br>
   	<div class="input-group">
   	  <button type="submit" class="btn" name="change_pass">Change password</button>
   	</div>
@@ -126,7 +134,7 @@ include_once('../login_test/errors.php');
 
 </form>
 <br>
-<p><b>Change email</b>   </p>
+<h3>Change email</h3>
 <form method="post" action="ProfilePage.php">
 <?php
 include_once '../login_test/mailer.php';
@@ -137,10 +145,13 @@ if (isset($_POST['change_mail'])) {
     $email_2 = mysqli_real_escape_string($db, $_POST['email_2']);
     $current_email = mysqli_real_escape_string($db, $_POST['current_email']);
    
-    if (empty($email_1)) { echo("Email is required\n");echo "<br>"; }
+    if (empty($email_1)) {
+	echo '<span style="color:red">An email is required !';
+    echo '</span><br><br>'; 
+	}
     if ($email_1 != $email_2) {
-    echo("The emails don't match\n");
-    echo "<br>";
+    echo '<span style="color:red">The emails do not match !';
+    echo '</span><br><br>';
    }
    
    if (count($errors) == 0) {
@@ -165,27 +176,70 @@ include_once('../login_test/errors.php');
   	  <label>Current Email</label>
       <input type="email" name="current_email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Your email adress (won't be checked)">
   	</div>
+	<br>
   	<div class="input-group">
   	  <label>Email</label>
   	  <input type="email" name="email_1" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Post new email adress here">
   	</div>
+	<br>
   	<div class="input-group">
   	  <label>Confirm Email</label>
   	  <input type="email" name="email_2" title="Must match email above">
   	</div>
+	<br>
   	<div class="input-group">
   	  <button type="submit" class="btn" name="change_mail">Change email</button>
   	</div>
 
-
 </form>
 
+<br><br><hr>
 
 <div>
-<section id="comments">
+<section id="my-reviews">
 <br>
-<p>We will have user's posts here</p>
+<h2>Your reviews</h2>
+<br>
+
+<?php
+$db = mysqli_connect('localhost:3306', 'root', '', 'tw');
+$my_name=$_SESSION['username'];
+$reviews_query="SELECT * FROM REVIEWS WHERE USER_NAME='$my_name' ORDER BY ID ASC";
+$my_reviews = mysqli_query($db,$reviews_query);
+
+if ($my_reviews->num_rows > 0) {
+  while($row = $my_reviews->fetch_assoc()) {
+	$entity_type=$row["type"];
+	$entity_id=$row["entity_id"];
+	$entity_name=$row["entity_name"];
+	$review_text=$row["text"];
+
+	echo '<div class="review">';
+	echo '<p>', '<h3>On ';
+	$review_link='../spotify/review.php' . '?type=' . $entity_type . '&id=' . $entity_id;
+	echo '<a href=', $review_link, '><span style="color: grey">', $entity_type, ':</span><span style="color: red"> ', $entity_name, '</span></a> you wrote : </h3>', $review_text, '</p>';
+	echo '<br>';
+
+
+	echo '<form method="POST" action="../spotify/review-remover.php">';
+	echo '<input type="hidden" name="username" value="', $my_name, '">';
+	echo '<input type="hidden" name="type" value="', $entity_type, '">';
+	echo '<input type="hidden" name="id" value="', $entity_id, '">';
+	echo '<input type="submit" name="delete_review" value="Delete this review"></form>';
+
+	echo '<br>';
+	echo '<hr></div>';
+  }
+} else {
+  echo '<div class="no-reviews">';
+  echo '<h3>', 'You have not reviewed anything yet.', '</h3>';
+  echo '<hr><br></div>';
+}
+?>
+
 </section>
+</div>
+
 </div>
 
 </body>

@@ -91,6 +91,9 @@ echo '<header class="main-header">
 			</div>
 		</header>';
 
+echo '<br>';
+echo '<div class="page-content">';
+
 if ($search_type=='artist'){
 $result=$api->getArtist($search_id);
 }
@@ -185,29 +188,47 @@ if ($results->num_rows > 0) {
 } else {
   echo '<div class="no-reviews">';
   echo '<h3>', 'There are no reviews yet', '</h3>';
-  echo '<hr></div>';
+  echo '<hr><br></div>';
 }
 
-echo '<div class="writer"><br>';
+echo '<br><div class="writer"><br>';
 
 if (isset($_SESSION['username'])){
-    echo '<h3>Write a review for ', $result->name, '</h3>';
-	echo '<p>(max 5000 characters, tags will be removed)', '</p><br>';
-	echo '<form method="POST" action="review-sender.php">';
-	echo '<input type="hidden" name="username" value=', $username, '>';
-	echo '<input type="hidden" name="type" value=', $search_type, '>';
-	echo '<input type="hidden" name="id" value=', $search_id, '>';
-	echo '<textarea name="write_review" rows="20" cols="60" minlength="25" maxlength="5000" required></textarea>';
-	echo '<br><br>';
-	echo  '<input type="submit" name="submit_review"></form>';
-	}
-	else {
-	echo '<h3>You need to be ';
-	echo '<a href="../login_test/login.php"> logged in </a>';
-	echo ' to write reviews</h3><br>';
-	}
 
-echo '<br></div><br>';
+	$check_query="SELECT * FROM REVIEWS WHERE USER_NAME='$username' AND TYPE='$search_type' AND ENTITY_ID='$search_id'";
+	$check_result=mysqli_query($db, $check_query);
+	$result_number=mysqli_num_rows($check_result);
+
+	if ($result_number>0){
+	echo '<h4>You already reviewed this !</h4>';
+	}
+	
+	else {
+		echo '<h3>Write a review for ', $result->name, '</h3>';
+		echo '<p>(max 5000 characters, tags will be removed)', '</p><br>';
+		echo '<form method="POST" action="review-sender.php">';
+		echo '<input type="hidden" name="username" value="', $username, '">';
+		echo '<input type="hidden" name="type" value="', $search_type, '">';
+		echo '<input type="hidden" name="id" value="', $search_id, '">';
+		$entity_name=$result->name;
+		$entity_name=mysqli_real_escape_string($db,$entity_name);
+		echo '<input type="hidden" name="entity_name" value="', $entity_name, '">';
+		echo '<textarea name="write_review" rows="20" cols="60" minlength="25" maxlength="5000" required></textarea>';
+		echo '<br><br>';
+		echo  '<input type="submit" name="submit_review"></form>';
+	}
+}
+
+else {
+echo '<h3>You need to be ';
+echo '<a href="../login_test/login.php"> logged in </a>';
+echo ' to write reviews</h3><br>';
+}
+
+echo '</div><br>';
+
+
+echo '<br><br></div><br>';
 
 }
 

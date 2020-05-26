@@ -35,6 +35,8 @@
 				</nav>
 			</div>
   </header>
+  <br>
+  <div class="page-content">
   <div class="header">
   	<h2>Login</h2>
   </div>
@@ -45,10 +47,12 @@
   		<label>Username</label>
   		<input type="text" name="username" >
   	</div>
+	<br>
   	<div class="input-group">
-  		<label>Password</label>
+  		<label>Password </label>
   		<input type="password" name="password">
   	</div>
+	<br>
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
@@ -56,5 +60,6 @@
   		Not yet a member? <a href="register.php">Sign up</a>
   	</p>
   </form>
+  </div>
 </body>
 </html>
