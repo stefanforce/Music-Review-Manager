@@ -2,6 +2,9 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
+
+require_once '../spotify/spotify_auth_refresh.php';
+
 $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/vendor/autoload.php";
 require($path);
@@ -191,7 +194,7 @@ if ($results->num_rows > 0) {
   echo '<hr><br></div>';
 }
 
-echo '<br><div class="writer"><br>';
+echo '<br><div class="writer">';
 
 if (isset($_SESSION['username'])){
 

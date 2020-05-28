@@ -1,4 +1,4 @@
-<?php include('spotify_search.php') ?>
+<?php require_once('spotify_search.php') ?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php require_once('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +49,7 @@
   </div>
 	
   <form method="post" action="register.php">
-  	<?php include('errors.php'); ?>
+  	<?php require_once('errors.php'); ?>
   	<div class="input-group">
   	  <label>Username</label>
   	  <input type="text" name="username" pattern="[A-Za-z0-9._-]{4,32}" title="4-32 alphanumerics or (. / _ / -)">

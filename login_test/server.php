@@ -1,6 +1,6 @@
 <?php
-include_once 'mailer.php';
-include_once 'welcome_message.php';
+require_once 'mailer.php';
+require_once 'welcome_message.php';
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }

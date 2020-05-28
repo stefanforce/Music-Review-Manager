@@ -2,9 +2,19 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
+
 $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/vendor/autoload.php";
 require_once($path);
+
+if((!isset($_SESSION["spotifytoken"])) || (isset($_SESSION["spotifytoken"]) && isset($_SESSION["spotifytokenstart"]))){
+
+if (isset($_SESSION["spotifytokenstart"])){
+$now=time();
+$lifetime=$now-$_SESSION["spotifytokenstart"];
+}
+
+if ((isset($lifetime) && $lifetime>1800) || (!isset($_SESSION["spotifytoken"]))){
 
 $session = new SpotifyWebAPI\Session(
     'a7832acf9edf4544bdb4e7e86ba6a539',
@@ -15,7 +25,8 @@ $session->requestCredentialsToken();
 $accessToken = $session->getAccessToken();
 
 $_SESSION["spotifytoken"]=$accessToken;
+$_SESSION["spotifytokenstart"]=time();
 
-header('Location: search_box.php');
-die();
+}
+}
 ?>

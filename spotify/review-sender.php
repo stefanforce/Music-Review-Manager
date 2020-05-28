@@ -3,6 +3,8 @@ if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
 
+require_once '../spotify/spotify_auth_refresh.php';
+
 $db = mysqli_connect('localhost:3306', 'root', '', 'TW');
 
 if(isset($_POST['submit_review'])){

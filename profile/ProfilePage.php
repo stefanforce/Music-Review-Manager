@@ -12,6 +12,9 @@
 <body>
 
     <?php 
+
+	require_once '../spotify/spotify_auth_refresh.php';	
+
     if (session_status() == PHP_SESSION_NONE) {
 		session_start();
 	} 
@@ -72,7 +75,7 @@
 <h3>Change password</h3>
 <form method="post" action="ProfilePage.php">
 <?php
-include_once '../login_test/mailer.php';
+require_once '../login_test/mailer.php';
 $errors = array(); 
 $db = mysqli_connect('localhost:3306', 'root', '', 'tw');
 if (isset($_POST['change_pass'])) {
@@ -81,10 +84,12 @@ if (isset($_POST['change_pass'])) {
     $current_password = mysqli_real_escape_string($db, $_POST['current_password']);
    
     if (empty($password_1)) {
+	array_push($errors, "Password is required");
 	echo '<span style="color:red">A new password is required !';
     echo '</span><br><br>'; 
 	}
     if ($password_1 != $password_2) {
+	array_push($errors, "Passwords do not match");
     echo '<span style="color:red">The passwords do not match !';
     echo '</span><br><br>';
 	}
@@ -110,7 +115,7 @@ if (isset($_POST['change_pass'])) {
 ?>
 <?php 
 $errors = array();
-include_once('../login_test/errors.php'); 
+require_once('../login_test/errors.php'); 
  ?>
 <div class="input-group">
   	  <label>Current Password</label>
@@ -137,7 +142,7 @@ include_once('../login_test/errors.php');
 <h3>Change email</h3>
 <form method="post" action="ProfilePage.php">
 <?php
-include_once '../login_test/mailer.php';
+require_once '../login_test/mailer.php';
 $errors = array(); 
 $db = mysqli_connect('localhost:3306', 'root', '', 'tw');
 if (isset($_POST['change_mail'])) {
@@ -146,10 +151,12 @@ if (isset($_POST['change_mail'])) {
     $current_email = mysqli_real_escape_string($db, $_POST['current_email']);
    
     if (empty($email_1)) {
+	array_push($errors, "Email is required");
 	echo '<span style="color:red">An email is required !';
     echo '</span><br><br>'; 
 	}
     if ($email_1 != $email_2) {
+	array_push($errors, "Emails do not match");
     echo '<span style="color:red">The emails do not match !';
     echo '</span><br><br>';
    }
@@ -170,7 +177,7 @@ if (isset($_POST['change_mail'])) {
 ?>
 <?php 
 $errors = array();
-include_once('../login_test/errors.php');
+require_once('../login_test/errors.php');
  ?>
 <div class="input-group">
   	  <label>Current Email</label>

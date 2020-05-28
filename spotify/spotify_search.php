@@ -2,6 +2,9 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
+
+require_once '../spotify/spotify_auth_refresh.php';
+
 $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/vendor/autoload.php";
 require($path);
