@@ -71,7 +71,7 @@ echo '<br><br><a href=', $review_link, '> Go back </a><br><br>';
 
 else {
 
-if ($final_length>24) {
+if ($final_length>9) {
 
 $review_query="INSERT INTO REVIEWS (USER_ID,USER_NAME,TYPE,ENTITY_ID,ENTITY_NAME,TEXT) VALUES ('$current_user','$username','$search_type','$search_id','$entity_name','$review_text')";
 mysqli_query($db, $review_query);

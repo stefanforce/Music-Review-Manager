@@ -112,6 +112,9 @@ html, body {
     margin-left: 1%;
     margin-right: 1%;
 }
+.review {
+    line-height: normal;
+}
 .result p a{
     color:white;
     border-style:solid;
@@ -180,9 +183,9 @@ html, body {
     text-decoration: none;
 }
 
-.fav a:visited { text-decoration: none; color:black; }
-.fav a:focus { text-decoration: none; color:black; }
-.fav a:hover, a:active { text-decoration: none; color:black }
+.fav a:visited { text-decoration: none; color:red; }
+.fav a:focus { text-decoration: none; color:red; }
+.fav a:hover, a:active { text-decoration: none; color:red }
 
 .writer {
     border-style:solid;

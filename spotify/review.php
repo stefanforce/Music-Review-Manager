@@ -217,7 +217,7 @@ if (isset($_SESSION['username'])){
 		$entity_name=$result->name;
 		$entity_name=mysqli_real_escape_string($db,$entity_name);
 		echo '<input type="hidden" name="entity_name" value="', $entity_name, '">';
-		echo '<textarea name="write_review" rows="20" cols="60" minlength="25" maxlength="5000" required></textarea>';
+		echo '<textarea name="write_review" rows="20" cols="60" minlength="10" maxlength="5000" required></textarea>';
 		echo '<br><br>';
 		echo  '<input type="submit" name="submit_review"></form>';
 	}
@@ -226,7 +226,7 @@ if (isset($_SESSION['username'])){
 else {
 echo '<h3>You need to be ';
 echo '<a href="../login_test/login.php"> logged in </a>';
-echo ' to write reviews</h3><br>';
+echo ' to write reviews</h3>';
 }
 
 echo '</div><br>';
