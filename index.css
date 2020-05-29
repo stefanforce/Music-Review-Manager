@@ -136,6 +136,18 @@ html, body {
     background: red;
     background-clip: padding-box;
 }
+.result input[type=submit]{
+    font-size:15px;
+    padding:5px;
+    cursor: pointer;
+    border-style: solid;
+    border-color:gray;
+    color:white;
+    border-width: 2.5px;
+    border-radius: 10px;
+    background: black;
+    background-clip: padding-box;
+}
 .writer {
     border-style:solid;
     border-color:grey;

@@ -56,8 +56,8 @@
 <p>☒ Simple user control panel (change password/mail)
 <p>☒ Review deletion
 <p>☒ In-depth security testing
+<p>☒ Favorites section
 <p>☐ Review RSS feed
-<p>☐ Favorites section
 <p>☐ Full metadata
 <p>☐ Searchable/linkable public user pages
 <br>

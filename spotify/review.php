@@ -184,6 +184,7 @@ if ($results->num_rows > 0) {
 	$user_name = $user_result->fetch_row();
 	$user_name = $user_name[0];
 
+	
 	echo '<div class="review">';
 	echo '<p>', '<h3>', $user_name, ' wrote : ', '</h3>', $review_text, '</p>';
 	echo '<hr></div>';

@@ -245,10 +245,43 @@ if ($my_reviews->num_rows > 0) {
 ?>
 
 </section>
+
+
+<section id="my-favourites">
+<br>
+<h2>Your favourites</h2>
+<br>
+
+<?php
+$db = mysqli_connect('localhost:3306', 'root', '', 'tw');
+$my_name=$_SESSION['username'];
+$fav_query="SELECT * FROM favourites WHERE username='$my_name' ORDER BY track_name ASC";
+$my_favs = mysqli_query($db,$fav_query);
+
+if ($my_favs->num_rows > 0) {
+	while($row = $my_favs->fetch_assoc()) {
+		$track_id=$row["track_id"];
+		$track_name=$row["track_name"];
+	
+		echo '<div class="fav">';
+		$review_link='../spotify/review.php' . '?type=' . "track" . '&id=' . $track_id;
+		echo '<a href=', $review_link, '>', $track_name,'</a>';
+		echo '<br>';
+	
+		echo '</div><br>';
+	}
+  } else {
+	echo '<div class="no-favs">';
+	echo '<h3>', 'You have no favourites yet.', '</h3>';
+	echo '<br></div><br>';
+  }
+
+    echo '<br>';
+?>
 </div>
 
 </div>
-
+<br>
 </body>
 
 </html>

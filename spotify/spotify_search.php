@@ -3,6 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
 
+
 require_once '../spotify/spotify_auth_refresh.php';
 
 $path = $_SERVER['DOCUMENT_ROOT'];
@@ -150,6 +151,9 @@ foreach ($results->albums->items as $resitem) {
 
 else if ($query_type=='track') {
 foreach ($results->tracks->items as $resitem) {
+	$track_id	=$resitem->id;
+	$track_name=$resitem->name;
+	$db = mysqli_connect('localhost:3306', 'root', '', 'TW');
 	echo '<div class="result">';
 
 	echo '<hr>';
@@ -157,7 +161,25 @@ foreach ($results->tracks->items as $resitem) {
 	echo '<a href=', $resitem->uri, '>', $resitem->name, '</a>', ' by ';
 	foreach($resitem->artists as $author) {echo '<a href=', $author->uri, '>', $author->name, '</a>', '  ';}
 	echo 'on <a href=', $resitem->album->uri, '>', $resitem->album->name, '</a>';
-	echo '<br><br>';
+	
+	$username=$_SESSION['username'];
+    $dupe_checked_query="SELECT * from favourites where username='$username' and track_id='$track_id'";
+    $dupe_checker_result=mysqli_query($db,$dupe_checked_query);
+	$result_number=mysqli_num_rows($dupe_checker_result);
+	
+	if ($result_number==0){
+		echo '<form method="POST" action="favourites_saver.php">';
+		$username = $_SESSION['username'];
+		echo '<input type="hidden" name="username" value="', $username, '">';
+		echo '<input type="hidden" name="track_id" value="', $track_id, '">';
+		echo '<input type="hidden" name="track_name" value="', $track_name, '">';
+		echo '<br>';
+		echo  '<input type="submit" name="save_favourites" value="Add to favourites"></form>';
+        echo '<br>';
+		}
+	else {
+		echo '<br><br>';
+	}
 
 	if (!empty($resitem->preview_url)){
 	$mp3 = $resitem->preview_url;
