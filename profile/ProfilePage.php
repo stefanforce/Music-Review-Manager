@@ -265,10 +265,14 @@ if ($my_favs->num_rows > 0) {
 	
 		echo '<div class="fav">';
 		$review_link='../spotify/review.php' . '?type=' . "track" . '&id=' . $track_id;
+		echo '<form method="POST" action="../spotify/favourite_remover.php">';
 		echo '<a href=', $review_link, '>', $track_name,'</a>';
+		echo '<input type="hidden" name="username" value="', $my_name, '">';
+		echo '<input type="hidden" name="track_id" value="', $track_id, '">';
+     	echo '<input type="submit" name="delete_favourite" value="Remove"></form>';
 		echo '<br>';
-	
-		echo '</div><br>';
+
+		echo '</div>';
 	}
   } else {
 	echo '<div class="no-favs">';
