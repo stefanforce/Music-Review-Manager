@@ -162,6 +162,28 @@ html, body {
     background: black;
     background-clip: padding-box;
 }
+
+.btn{
+    font-size:15px;
+    padding:5px;
+    cursor: pointer;
+    border-style: solid;
+    border-color:gray;
+    color:white;
+    border-width: 2.5px;
+    border-radius: 10px;
+    background: black;
+    background-clip: padding-box;
+}
+
+.fav a{
+    text-decoration: none;
+}
+
+.fav a:visited { text-decoration: none; color:black; }
+.fav a:focus { text-decoration: none; color:black; }
+.fav a:hover, a:active { text-decoration: none; color:black }
+
 .writer {
     border-style:solid;
     border-color:grey;
