@@ -27,35 +27,31 @@
     color: #FFF;
 }
 img {
-    width:20%;
     height:auto;
+    width:20%;
 }
 html, body {
-    margin: 0;
-    padding: 0;
+    -ms-overflow-style: none;
+    background: #E8E8E8;
+    color:black;
     font-family: sans-serif;
     font-size: 1em;
     line-height: 1.5;
-    color:	black;
-    background: #E8E8E8;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
 }
 .main-header {
-    background: #FFF;
+    border-color: rgb(70, 70, 70);
     border-style: solid;
     border-width: 0 0 3px 0;
-    border-color: rgb(70, 70, 70);
+    background: #FFF;
 }
 .mh-logo {
     display: flex;
     flex-wrap:nowrap;
     align-items: center;
     max-height:100px;
-    margin-top:5px;
-    margin-left:5px;
-    margin-right:5px;
-    margin-bottom:5px;
+    margin:5px 5px 5px 5px;
 }
 .site-title {
     font-family:oregano;
@@ -110,7 +106,7 @@ html, body {
     flex-wrap: wrap;
 }
 .main-nav ul {
-    margin: 0em 0 0em;
+    margin: 0 0 0;
     text-align: center;
 }
 .main-nav li {
@@ -130,7 +126,7 @@ html, body {
 	line-height: 90%;
 }
 .page-content p{
-	font-size:15 px;
+	font-size:15px;
 }
 .result, .review, .writer {
     margin-left: 1%;
