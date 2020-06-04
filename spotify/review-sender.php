@@ -22,15 +22,15 @@ $review_text=strip_tags($review_text);
 $review_text=htmlspecialchars($review_text);
 $final_length=strlen($review_text);
 
-echo '<html><head>';
+echo '<html lang="en"><head>';
 echo '<link rel="stylesheet" type="text/css" href="../index.css">';
 echo '</head><body>';
 echo '<header class="main-header">
 			<div class="container">
-				<h1 class="mh-logo">
-					<img src="../icons/logo.png" width="100" height="100" alt="logo">
-					<h1> Music Review Manager </h1>
-				</h1>
+				<div class="mh-logo">
+					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
+					<div class="site-title"> Music Review Manager </div>
+				</div>
 				<nav class="main-nav">
 					<ul class="main-nav-list">
                         <li><a href="../index.php">Home</a>';

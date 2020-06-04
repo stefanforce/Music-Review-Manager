@@ -22,7 +22,9 @@ $username=$_SESSION['username'];
 $search_type=$_GET['type'];
 $search_id=$_GET['id'];
 
-echo '<html><head>';
+echo '<!DOCTYPE html>';
+echo '<html lang="en"><head>';
+echo '<title>Spotify Entity Review Page</title>';
 echo '<link rel="stylesheet" type="text/css" href="../index.css">';
 echo '<style>
 img {
@@ -66,10 +68,10 @@ echo '</head><body>';
 
 echo '<header class="main-header">
 			<div class="container">
-				<h1 class="mh-logo">
-					<img src="../icons/logo.png" width="100" height="100" alt="logo">
-					<h1> Music Review Manager </h1>
-				</h1>
+				<div class="mh-logo">
+					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
+					<div class="site-title"> Music Review Manager </div>
+				</div>
 				<nav class="main-nav">
 					<ul class="main-nav-list">
                         <li><a href="../index.php">Home</a>';
@@ -219,7 +221,8 @@ if (isset($_SESSION['username'])){
 		echo '<input type="hidden" name="entity_name" value="', $entity_name, '">';
 		echo '<textarea name="write_review" rows="20" cols="60" minlength="10" maxlength="5000" required></textarea>';
 		echo '<br><br>';
-		echo  '<input type="submit" name="submit_review"></form>';
+		echo '<input type="submit" name="submit_review"></form>';
+		echo '<br>';
 	}
 }
 

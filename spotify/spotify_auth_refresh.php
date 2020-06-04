@@ -14,7 +14,7 @@ $now=time();
 $lifetime=$now-$_SESSION["spotifytokenstart"];
 }
 
-if ((isset($lifetime) && $lifetime>1800) || (!isset($_SESSION["spotifytoken"]))){
+if ((isset($lifetime) && $lifetime>3540) || (!isset($_SESSION["spotifytoken"]))){
 
 $session = new SpotifyWebAPI\Session(
     'a7832acf9edf4544bdb4e7e86ba6a539',
