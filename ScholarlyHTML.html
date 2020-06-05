@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="https://w3c.github.io/scholarly-html/css/scholarly.min.css">
+    <script src="https://w3c.github.io/scholarly-html/js/scholarly.min.js"></script>
+</head>
+
+<body prefix="schema: http://schema.org" style="font-family: calibri !important; font-size: 14pt;">
+    <header>
+        <h1>Music Review Manager</h1>
+    </header>
+
+    <div role="contentinfo">
+        <dl>
+            <dt>Autori</dt>
+            <dd>
+                <a href="https://github.com/stefanforce">Tiperciuc Stefan</a><br>
+                <a href="https://github.com/FluffyPanda69">Leuciuc Andrei-Dragos</a>
+
+            </dd>
+        </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+        <h2>Abstract</h2>
+        <p>
+            <i>Music Review Manager</i> permite utilizatorilor sa caute si sa asculte melodiile lor favorite,
+            oferindu-le si posibilitatea de a isi exprima propria opinie despre ele.
+        </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+        <h2>Introducere</h2>
+        <p>
+            Sit-ul web <i>Music Review Manager</i> ofera o metoda de accesare a bazei de date oferite de <a href ="https://www.spotify.com/us/">Spotify</a>
+            pentru a cauta diverse informatii despre melodii,compozitori si albume. Acestia, apoi, pot opta sa ofere un review la 
+            oricare dintre aceste 3 elemente sau sa adauge o melodia in lista lor de favoriti.
+        </p>
+    </section>
+    <section id="motivation">
+        <h2>Motivatie</h2>
+        <p>
+            Sit-ul web a fost conceput ca si tema pentru proiectul de la cursul Tehnologii Web al Facultatii de Informatica
+            Alexandru Ioan Cuza Iasi. Alegerea acestui proiect are la baza dorinta autorilor de a crea un mediu interactiv,
+            usor de folosit pentru utilizator, pentru a cauta informatii actuale despre lumea muzicii.
+        </p>
+    </section>
+    <section id="problem">
+        <h2>Cerinta proiectului</h2>
+        <p>
+            Se doreste crearea unei aplicatii Web care permite specificarea adnotarilor textuale si a meta-datelor 
+            (a se studia The Ultimate Guide to Music Metadata), plus exprimarea opiniilor vizand auditiile muzicale 
+            realizate de o persoana sau grup de persoane. Sistemul va realiza managementul productiilor muzicale, 
+            inclusiv organizarea lor pe diverse criterii: categorie, artist, album, an, legaturi cu alte melodii
+            inrudite etc. Se vor oferi statistici diverse ce pot fi exportate in formate deschise – minimal, CSV si PDF.
+            </p>
+            <p>
+            Diversele anunturi (o persoana a comentat un album muzical, a aparut o alta compilatie de interes, modificarea 
+            clasamentului celor mai apreciate cantece ale lunii etc.) vor fi expuse ca flux de stiri RSS. Listele de melodii 
+            preferate vor fi importate/exportate in format JSPF/XSPF. Resurse de interes: MusicBrainz - The Open Music Encyclopedia. 
+            Bonus: recurgerea la un serviciu online precum Last.fm, Spotify etc.   
+        </p>
+    </section>
+    <section id="game">
+        <h2>Elemente de implementare a sit-ului web</h2>
+
+        <section id="preparation">
+            <h3>Pregatirea mediului de lucru</h3>
+           <p>Dupa ce am citit cu atentie cerinta proiectului, primul lucru pe care l-am realizat a fost initierea mediului de lucru
+            <a href ="https://github.com/stefanforce/Music-Review-Manager">Github</a>, unde am decis sa centralizam locul unde sunt gasite
+            ultimele modificari in proiect. Odata cu crearea acestui repository, am decis sa ne informam despre cum ar trebui sa arate un sit
+            de natura proiectului. O inspiratie majora a fost sit-ul <a href ="https://musicbrainz.org/">MusicBrainz</a>, care a devenit un 
+            model dupa care ne-am construit propriul website. Dupa ce am avut o idee generala despre cum ar trebui sa fie organizat acesta,
+            intrucat nu eram foarte familiarizati cu HTML-ul si CSS-ul, am urmarit diferite tutoriale despre cum trebuie construit un astfel de
+            proiect.
+           </p>
+        </section>
+        
+        <section id="progress">
+            <h3>Prezentarea progresului</h3>
+            <p>
+                Urmand faza de prima documentare a proiectului, un prim pas realizat a fost sa cream un demo pentru pagina principala. Insa, precum 
+                mentionat anterior, nu am mai folosit HTML si aceasta pagina avea diferite neajunsuri. Cel mai mare dintre acestea a fost faptul 
+                ca pagina nu era responsive din cauza barei de navigare, care nu avea un aspect potrivit pe o platforma mobila. Dupa ce am creat un
+                 prim model functional si interactiv de pagina principala, pasul ulterior a fost sa cream o pagina ce permite utilizatorilor sa se 
+                 inregistreze/autentifice la sit-ul web. Clientul autentificat, la acest pas, nu avea inca permisiuni suplimentare fata de cele ale 
+                 unuia neregistrat, insa am considerea ca implementarea unui formular de login va urma sa fie beneficiara.
+            </p>
+            <p>
+                Odata cu optiunea de crearea a unui cont, am considerea ca urmatorul pas esential in implementare a fost sa cream o pagina de profil 
+                pentru utilizator, ce ii permite sa isi modifice parola sau adresa de e-mail si o pagina folosita pentru a cauta informatii despre melodii,
+                 artsti sau albume in baza de date oferita de <a href ="https://www.spotify.com/us/">Spotify</a>, folosind metodele documentate la <b>Ples adauga link-ul cela de github</b>.
+            </p>
+            <p>
+                Dupa aceste elemente, am implementat functionalitatile utilizatorilor autentificati, precum adaugarea de comentarii la melodiile, 
+                artistii sau albulemele selectate sau inserarea acestora in lista de favoriti a utilizatorului. Toate aceste elemente au fost, apoi, 
+                reprezentate in pagina de profil a clientului.
+            </p>
+            <p>
+                Nu in ultimul rand, am realizat finalele cerinte ale proiectului, precum exportarea listei de favoriti intr-un format XSPF, a diverselor
+                statistici in format CSV si expunerea diverselor anunturi ca flux RSS.
+            </p>
+        </section>
+
+        <section id="style">
+            <h3>Decizii legate de stilul paginii </h3>
+            <p>
+                Inca de la inceput, scopul proiectului a fost sa cream un mediu de lucru usor de folosit pentru utilizator. Astfel, toate elementele de la
+                pagina principala, pagina de cautare in baza de date a <a href ="https://www.spotify.com/us/">Spotify-ului</a> si stilul CSS au fost concepute
+                sa confere un aer minimalist, dar clean. Culorile folosite au fost ales pentru a accentua simplitatea design-ului si pentru a oferi un grad mare
+                de lizibilitate. Bara de navigare este un element important, care este prezent in toate paginile sit-ului web si ofera utilizatorului accesul facil
+                la toate elementele acestuia.
+                 
+            </p>
+        </section>
+
+        <section id="">
+            <h3>
+
+            </h3>
+        </section>
+    </section>
+
+
+    <section id="development">
+        <h2>Elemente externe</h2>
+        <section id="PHP">
+            <H3>Limbajul de programare folosit</H3>
+            <p>
+                Limbajul de programare preponderent pe care am decis sa il folosim a fost PHP-ul. Acesta ne oferea posibilitatea de a realiza dinamic paginile HTML pe
+                care le vede clientul si a procesa usor interactiunea client-server. Un alt aspect, care ne-a motivat sa alegem limbajul acesta de programare, a fost 
+                accesibilitatea la o documentatie extinsa pentru acesta si usurinta pentru programatorii incepatori sa creeze proiecte de aceasta natura.
+            </p>
+        </section>
+        <section id="github">
+            <H3>Github</H3>
+            <p>
+               Pentru centralizarea ultimelor modificare in proiect am folosit <a href ="https://github.com/">Github</a>. Acesta s-a dovedit foarte folositor in evolutia
+               programului, intrucat de fiecare data cand cineva termina o parte din proiect sau o modificare a acestuia, el incarca acestea pe repository si toti ceilalti
+               membri puteau sa vada modificarile si sa continue peste acestea. De asemenea, acesta retine toate modificarile (commit-urile) facute de fiecare persoana si
+               data acestora, precum si cantitatea de cod scris de fiecare persoana. Pe langa acestea, o alta functie benefiara a Github-ului este cea de "Projects", unde 
+               fiecare contribuitor poate crea task-uri. Ele au ca scop impartirea cerintelor in categoriile "de facut","in proces de implementare" si "terminate".
+            </p>
+            
+        </section>
+        <section id="db">
+            <H3>Database</H3>
+            <p>
+               Pentru proiectul nostru am folosit baza de date oferita de PHP MyAdmin. Aceasta a fost folosita pentru a usura interactiunea cu serverul construit predominant
+               in PHP, oferit de catre XAMPP, prin intermediul careia este hostat. 
+            </p>
+            
+        </section>
+
+    </section>
+    <section id="URL">
+        <H3>URL</H3>
+        <p>
+          <b>Daca vrei tu sa mai scrii despre url-ul cubiclemon.go</b>
+        </p>
+        
+    </section>
+
+        </section>
+        <section id="contributions">
+            <h3>Contributii</h3>
+           
+        </section>
+    </section>
+    <section id="conclusion">
+        <h2>Concluzii</h2>
+        <p>
+      
+        </p>
+    </section>
+
+    <section id="biblio-references">
+        <h2>Referinte</h2>
+        <ol>
+      
+        </ol>
+    </section>
+
+    </section>
+
+
+</body>
+
+</html>
