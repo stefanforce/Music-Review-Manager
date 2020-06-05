@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="ro" class="no-js">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Music Review Manager</title>
 <link rel="icon" href="icons/android-chrome-512x512.png" type="image/x-icon"/>
 <meta name="description" content="Music Review Manager">
@@ -12,10 +11,10 @@
 <body>
 		<header class="main-header">
 			<div class="container">
-				<h1 class="mh-logo">
+				<div class="mh-logo">
 					<img src="icons/logo.png"  width="100" height="100" alt="logo">
-					<h1> Music Review Manager </h1>
-				</h1>
+					<div class="site-title"> Music Review Manager </div>
+				</div>
 				<nav class="main-nav">
 					<ul class="main-nav-list">
                         <li><a href="index.php">Home</a>
@@ -46,28 +45,27 @@
 <p>Current status of the website is : <b>in development (stable)</b></p>
 <br>
 <h2>Features :</h2>
-<p>☒ Basic HTML and CSS design
-<p>☒ Register and Login system
-<p>☒ Simple mailer service
-<p>☒ Login-free connection to Spotify API
-<p>☒ Spotify search with metadata
-<p>☒ Track 30 second preview
-<p>☒ Review submitting and reading
-<p>☒ Simple user control panel (change password/mail)
-<p>☒ Review deletion
-<p>☒ In-depth security testing
-<p>☒ Favorites section
-<p>☐ Review RSS feed
-<p>☐ Full metadata
-<p>☐ Searchable/linkable public user pages
+<p>☒ Basic HTML and CSS design </p>
+<p>☒ Register and Login system </p>
+<p>☒ Simple mailer service </p>
+<p>☒ Login-free connection to Spotify API </p>
+<p>☒ Spotify search with metadata </p>
+<p>☒ Track 30 second preview </p>
+<p>☒ Review submitting and reading </p>
+<p>☒ Simple user control panel (change password/mail) </p>
+<p>☒ Review deletion </p>
+<p>☒ In-depth security testing </p>
+<p>☒ Favorites section </p>
+<p>☒ Valid HTML and actually responsive CSS </p>
+<p>☐ Review RSS feed </p>
+<p>☐ Full metadata </p>
+<p>☐ Searchable/linkable public user pages </p>
 <br>
 </div>
 <br><br>
 <hr>
 <div class="bottom-text">
-<p>This website is an open-source project, you are free to copy and modify the source code for any purpose. It is a work in progress and we do not guarantee code quality or data security. </p>
-<p>We do not use cookies or store any personal data besides that which you directly provide us. The data is never shared with third-parties and can be deleted at your request. </p>
-<p>For any questions or requests <a href = "mailto: musicreviewmanager@gmail.com">contact us</a></p>
+<p>This website is an open-source project, you are free to copy and modify the source code for any purpose. It is a work in progress and we do not guarantee code quality or data security. We do not use cookies or store any personal data besides that which you directly provide us. The data is never shared with third-parties and can be deleted at your request. For any questions or requests <a href = "mailto:musicreviewmanager@gmail.com">contact us</a>.</p>
 </div>
 
 </body>

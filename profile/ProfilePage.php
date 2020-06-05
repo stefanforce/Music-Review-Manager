@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro" class="no-js">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Music Review Manager</title>
 <link rel="icon" href="icons/android-chrome-512x512.png" type="image/x-icon"/>
-<meta name="description" content="Music Review Manager Account Management">
+<meta name="description" content="MRM Account Management">
 <link rel="stylesheet" type="text/css" href="../index.css">
 </head>
 
@@ -32,10 +31,10 @@
 
 <header class="main-header">
 			<div class="container">
-				<h1 class="mh-logo">
+				<div class="mh-logo">
 					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
-					<h1> Music Review Manager </h1>
-				</h1>
+					<div class="site-title"> Music Review Manager </div>
+				</div>
 				<nav class="main-nav">
 					<ul class="main-nav-list">
                         <li><a href="../index.php">Home</a>
@@ -63,15 +62,17 @@
 <br>
 
 <div class="page-content">
-<div class="first-column">
+<div class="welcome">
 <?php  if (isset($_SESSION['username'])) : ?>
     	<h1>Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     	<h3><a href="../login_test/index.php?logout='1'" style="color: red;">logout</a></h3>
-		<br>
+		<hr><br>
     <?php endif ?>
 </div>
 
-
+<div class="account-controls" id="account-controls">
+<h2>Account settings</h2>
+<br>
 <h3>Change password</h3>
 <form method="post" action="ProfilePage.php">
 <?php
@@ -199,10 +200,9 @@ require_once('../login_test/errors.php');
   	</div>
 
 </form>
-
+</div>
 <br><br><hr>
 
-<div>
 <section id="my-reviews">
 <br>
 <h2>Your reviews</h2>
@@ -222,9 +222,9 @@ if ($my_reviews->num_rows > 0) {
 	$review_text=$row["text"];
 
 	echo '<div class="review">';
-	echo '<p>', '<h3>On ';
+	echo '<h3>On ';
 	$review_link='../spotify/review.php' . '?type=' . $entity_type . '&id=' . $entity_id;
-	echo '<a href=', $review_link, '><span style="color: grey">', $entity_type, ':</span><span style="color: red"> ', $entity_name, '</span></a> you wrote : </h3>', $review_text, '</p>';
+	echo '<a href=', $review_link, '><span style="color: grey">', $entity_type, ':</span><span style="color: red"> ', $entity_name, '</span></a> you wrote : </h3>', $review_text;
 	echo '<br>';
 
 
@@ -232,24 +232,25 @@ if ($my_reviews->num_rows > 0) {
 	echo '<input type="hidden" name="username" value="', $my_name, '">';
 	echo '<input type="hidden" name="type" value="', $entity_type, '">';
 	echo '<input type="hidden" name="id" value="', $entity_id, '">';
+	echo '<br>';
 	echo '<input type="submit" name="delete_review" value="Delete this review"></form>';
 
 	echo '<br>';
-	echo '<hr></div>';
+	echo '</div>';
   }
 } else {
   echo '<div class="no-reviews">';
   echo '<h3>', 'You have not reviewed anything yet.', '</h3>';
-  echo '<hr><br></div>';
+  echo '<br></div>';
 }
 ?>
 
 </section>
-
+<hr>
 
 <section id="my-favourites">
 <br>
-<h2>Your favourites</h2>
+<h2>Your favourite tracks</h2>
 <br>
 
 <?php
@@ -282,8 +283,20 @@ if ($my_favs->num_rows > 0) {
 
     echo '<br>';
 ?>
-</div>
+</section>
 
+<div class="jump-links">
+<form action="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php#account-controls">
+    <input type="submit" value="Settings" />
+</form>
+<form action="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php#my-reviews">
+    <input type="submit" value="Reviews" />
+</form>
+<form action="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php#my-favourites">
+    <input type="submit" value="Favourites" />
+</form>
+</div>
+<br>
 </div>
 <br>
 </body>

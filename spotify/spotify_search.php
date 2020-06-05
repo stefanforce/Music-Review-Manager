@@ -3,7 +3,6 @@ if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
 
-
 require_once '../spotify/spotify_auth_refresh.php';
 
 $path = $_SERVER['DOCUMENT_ROOT'];
@@ -19,7 +18,9 @@ $api->setAccessToken($accessToken);
 if (isset($_POST['spotify_search'])){
 $query=$_POST['query'];
 $query_type=$_POST['search_type'];
-echo '<html><head>';
+echo '<!DOCTYPE html>';
+echo '<html lang="en"><head>';
+echo '<title>Spotify Search Result</title>';
 echo '<link rel="stylesheet" type="text/css" href="../index.css">';
 echo '<style> #hidden {
   display: none;
@@ -58,10 +59,10 @@ width:95%;
 echo '</head><body>';
 echo '<header class="main-header">
 			<div class="container">
-				<h1 class="mh-logo">
-					<img src="../icons/logo.png" width="100" height="100" alt="logo">
-					<h1> Music Review Manager </h1>
-				</h1>
+				<div class="mh-logo">
+					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
+					<div class="site-title"> Music Review Manager </div>
+				</div>
 				<nav class="main-nav">
 					<ul class="main-nav-list">
                         <li><a href="../index.php">Home</a>';
@@ -162,14 +163,17 @@ foreach ($results->tracks->items as $resitem) {
 	foreach($resitem->artists as $author) {echo '<a href=', $author->uri, '>', $author->name, '</a>', '  ';}
 	echo 'on <a href=', $resitem->album->uri, '>', $resitem->album->name, '</a>';
 	
+
+	if (isset($_SESSION["username"])){
 	$username=$_SESSION['username'];
     $dupe_checked_query="SELECT * from favourites where username='$username' and track_id='$track_id'";
     $dupe_checker_result=mysqli_query($db,$dupe_checked_query);
 	$result_number=mysqli_num_rows($dupe_checker_result);
 	
+
 	if ($result_number==0){
 		echo '<form method="POST" action="favourites_saver.php">';
-		$username = $_SESSION['username'];
+		
 		echo '<input type="hidden" name="username" value="', $username, '">';
 		echo '<input type="hidden" name="track_id" value="', $track_id, '">';
 		echo '<input type="hidden" name="track_name" value="', $track_name, '">';
@@ -180,10 +184,15 @@ foreach ($results->tracks->items as $resitem) {
 	else {
 		echo '<br><br>';
 	}
+	}
+
+	else {
+	echo '<br><br>';
+	}
 
 	if (!empty($resitem->preview_url)){
 	$mp3 = $resitem->preview_url;
-	echo '<audio controls controlsList="nodownload"> <source src="';
+	echo '<audio controls> <source src="';
 	echo $mp3, '" type="audio/mpeg">';
 	echo 'Your browser does not support the audio element. </audio>';
 	}
@@ -202,11 +211,11 @@ foreach ($results->tracks->items as $resitem) {
 }
 
 echo '</div><br>';
+echo '</body></html>';
 }
 }
 else {
 	header('Location: spotify_auth.php');
 }
 
-echo '</body></html>';
 ?>

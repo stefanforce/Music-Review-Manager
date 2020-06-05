@@ -1,6 +1,6 @@
 <?php require_once('server.php') ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Registration page</title>
   <link rel="stylesheet" type="text/css" href="../index.css">
@@ -15,10 +15,10 @@
 
   <header class="main-header">
 			<div class="container">
-				<h1 class="mh-logo">
+				<div class="mh-logo">
 					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
-					<h1> Music Review Manager </h1>
-				</h1>
+					<div class="site-title"> Music Review Manager </div>
+				</div>
 				<nav class="main-nav">
 					<ul class="main-nav-list">
                         <li><a href="../index.php">Home</a>

@@ -1,6 +1,6 @@
 <?php require_once('spotify_search.php') ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Spotify Search</title>
 <link rel="stylesheet" type="text/css" href="../index.css">
@@ -9,10 +9,10 @@
 
 <header class="main-header">
 			<div class="container">
-				<h1 class="mh-logo">
+				<div class="mh-logo">
 					<img src="../icons/logo.png"  width="100" height="100" alt="logo">
-					<h1> Music Review Manager </h1>
-				</h1>
+					<div class="site-title"> Music Review Manager </div>
+				</div>
 				<nav class="main-nav">
 					<ul class="main-nav-list">
                         <li><a href="../index.php">Home</a>
@@ -50,13 +50,14 @@
 	<br><br>
   	<div class="input-group">
   	  <label>Query</label>
-  	  <input type="text" name="query" pattern="[A-Za-z0-9._- ]{1,64}" title="Maximum 64 alphanumerics or (. / _ / -)">
+  	  <input type="text" name="query" pattern="[A-Za-z0-9._-/ ]{1,64}" required title="Maximum 64 alphanumerics or (. , _ , - , /)">
   	</div>
 	<br>
 	<div class="input-group">
   	  <button type="submit" class="btn" name="spotify_search">Search</button>
   	</div>
 </form>
+<br>
 </div>
 </body>
 </html>
