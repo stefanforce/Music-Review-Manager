@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Scholarly HTML</title>
+    <title>Scholarly HTML - MrM</title>
     <link rel="stylesheet" href="https://w3c.github.io/scholarly-html/css/scholarly.min.css">
     <script src="https://w3c.github.io/scholarly-html/js/scholarly.min.js"></script>
 </head>
@@ -20,111 +20,113 @@
             <dd>
                 <a href="https://github.com/stefanforce">Tiperciuc Stefan</a><br>
                 <a href="https://github.com/FluffyPanda69">Leuciuc Andrei-Dragos</a>
-
             </dd>
         </dl>
     </div>
+
     <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
         <h2>Abstract</h2>
         <p>
-            <i>Music Review Manager</i> permite utilizatorilor sa caute si sa asculte melodiile lor favorite,
-            oferindu-le si posibilitatea de a isi exprima propria opinie despre ele.
+            <i>Music Review Manager</i> permite utilizatorilor sa realizeze cautari legate de lumea muzicii (artisti, albume, piese),
+			sa vizualizele date si sa-si exprime public opinia in legatura cu acestea.
         </p>
     </section>
+
     <section id="introduction" role="doc-introduction">
         <h2>Introducere</h2>
         <p>
-            Sit-ul web <i>Music Review Manager</i> ofera o metoda de accesare a bazei de date oferite de <a href ="https://www.spotify.com/us/">Spotify</a>
-            pentru a cauta diverse informatii despre melodii,compozitori si albume. Acestia, apoi, pot opta sa ofere un review la 
-            oricare dintre aceste 3 elemente sau sa adauge o melodia in lista lor de favoriti.
+            Oferim o metoda de accesare a bazei imense de date gazduita de <a href ="https://www.spotify.com/">Spotify</a>
+            pentru a cauta diverse informatii despre melodii, compozitori si albume. Fiecare entitate astfel gasita are propria pagina unde utilizatorii inregistrati pot scrie si citi recenzii.
+			Suplimentar, se ofera o legatura externa catre pagina Spotify a entitatii. Utilizatorii au, de asemenea, posibilitatea sa-si administreze o lista de melodii favorite.
         </p>
     </section>
+
     <section id="motivation">
         <h2>Motivatie</h2>
         <p>
-            Sit-ul web a fost conceput ca si tema pentru proiectul de la cursul Tehnologii Web al Facultatii de Informatica
-            Alexandru Ioan Cuza Iasi. Alegerea acestui proiect are la baza dorinta autorilor de a crea un mediu interactiv,
-            usor de folosit pentru utilizator, pentru a cauta informatii actuale despre lumea muzicii.
+            Site-ul web a fost conceput ca tema pentru proiectul de la cursul Tehnologii Web al Facultatii de Informatica
+            Alexandru Ioan Cuza Iasi. Alegerea acestui proiect are la baza dorinta autorilor de a crea un mediu interactiv
+            si usor de folosit pentru cautarea de informatii actuale din lumea muzicii prin intermediul unui serviciu de incredere.
         </p>
     </section>
-    <section id="problem">
-        <h2>Cerinta proiectului</h2>
-        <p>
-            Se doreste crearea unei aplicatii Web care permite specificarea adnotarilor textuale si a meta-datelor 
-            (a se studia The Ultimate Guide to Music Metadata), plus exprimarea opiniilor vizand auditiile muzicale 
-            realizate de o persoana sau grup de persoane. Sistemul va realiza managementul productiilor muzicale, 
-            inclusiv organizarea lor pe diverse criterii: categorie, artist, album, an, legaturi cu alte melodii
-            inrudite etc. Se vor oferi statistici diverse ce pot fi exportate in formate deschise – minimal, CSV si PDF.
-            </p>
-            <p>
-            Diversele anunturi (o persoana a comentat un album muzical, a aparut o alta compilatie de interes, modificarea 
-            clasamentului celor mai apreciate cantece ale lunii etc.) vor fi expuse ca flux de stiri RSS. Listele de melodii 
-            preferate vor fi importate/exportate in format JSPF/XSPF. Resurse de interes: MusicBrainz - The Open Music Encyclopedia. 
-            Bonus: recurgerea la un serviciu online precum Last.fm, Spotify etc.   
-        </p>
-    </section>
+
     <section id="overview">
         <h2>Prezentarea de ansamblu</h2>
 
         <section id="preparation">
-            <h3>Pregatirea mediului de lucru</h3>
-           <p>Dupa ce am citit cu atentie cerinta proiectului, primul lucru pe care l-am realizat a fost initierea mediului de lucru
-            <a href ="https://github.com/stefanforce/Music-Review-Manager">Github</a>, unde am decis sa centralizam locul unde sunt 
-            gasite ultimele modificari in proiect. Odata cu crearea acestui repository, am decis sa ne informam despre cum ar trebui 
-            sa arate un sit de natura proiectului. O inspiratie majora a fost sit-ul <a href ="https://musicbrainz.org/">MusicBrainz</a>,
-            care a devenit un model dupa care ne-am construit propriul website. Dupa ce am avut o idee generala despre cum ar trebui sa
+           <h3>Pregatirea mediului de lucru</h3>
+           <p>Primul lucru pe care l-am realizat a fost initierea mediului de lucru
+            <a href ="https://github.com/stefanforce/Music-Review-Manager">Github</a>, unde am decis sa centralizam modificarile
+			in proiect. Odata cu crearea acestui repository, am decis sa ne informam despre cum ar trebui 
+            sa arate un site de natura proiectului. Dupa ce am avut o idee generala despre cum ar trebui sa
             fie organizat acesta, intrucat nu eram foarte familiarizati cu HTML-ul si CSS-ul, am urmarit diferite tutoriale despre cum
             trebuie construit un astfel de proiect.
            </p>
-        </section>
+		</section>
         
         <section id="progress">
             <h3>Prezentarea progresului</h3>
             <p>
-                Urmand faza de prima documentare a proiectului, un prim pas realizat a fost sa cream un demo pentru pagina principala. Insa,
-                precum mentionat anterior, nu am mai folosit HTML si aceasta pagina avea diferite neajunsuri. Cel mai mare dintre acestea a
-                fost faptul ca pagina nu era responsive din cauza barei de navigare, care nu avea un aspect potrivit pe o platforma mobila.
+                Urmand faza de documentare a proiectului, un prim pas realizat a fost sa cream un demo pentru pagina principala. Insa aceasta
+				pagina avea diferite neajunsuri, cel mai mare dintre acestea fiind faptul ca pagina nu era responsiva din cauza barei de navigare
+				care nu avea un aspect potrivit pe o platforma mobila.
                 Dupa ce am creat un prim model functional si interactiv de pagina principala, pasul ulterior a fost sa cream o pagina ce permite
-                utilizatorilor sa se inregistreze/autentifice la sit-ul web. Clientul autentificat, la acest pas, nu avea inca permisiuni
-                suplimentare fata de cele ale unuia neregistrat, insa am considerea ca implementarea unui formular de login va urma sa fie beneficiara.
+                utilizatorilor sa se inregistreze/autentifice la site-ul web. Clientul autentificat, la acest pas, nu avea inca permisiuni
+                suplimentare fata de cele ale unuia neregistrat, insa am considerat ca implementarea unui formular de login va urma sa fie utila.
+				Odata cu optiunea de creare a unui cont, am considerat ca urmatorul pas esential in implementare era sa cream o pagina de profil 
+                pentru utilizator, ce ii permite sa isi modifice parola sau adresa de e-mail.
+            </p>
+			<p>
+				Pentru a realiza interogari aveam nevoie de o baza de date cu informatii muzicale. Am realizat repede ca nu este practic si probabil nici legal sa facem o copie
+				a unei baze de date cunoscute, iar gazduirea acesteia ar fi necesitat oricum resurse de care nu dispunem. Astfel am fost nevoiti sa recurgem la
+				servicii din exterior. Am ales <a href ="https://www.spotify.com/us/">Spotify</a> atat datorita popularitatii generale a serviciilor oferite de aceasta companie,
+				cat si pentru a beneficia de un serviciu actualizat constant, cu o documentatie extinsa. Au existat totusi si dezavantaje: a trebuit sa alegem intre constrangerea
+				utilizatorului sa aiba un cont de Spotify, fara care site-ul nostru ar fi fost inutilizabil, sau sa folosim o biblioteca pentru a conecta toti utilizatorii la API-ul Spotify
+				folosind un singur set de chei. Am ales cea de-a doua varianta, acceptand astfel si limitarea de a nu putea accesa decat date disponibile in mod public pe acest API (cautarile
+				returneaza doar rezultate nepersonalizate).
+			</p>
+            <p>
+                Realizand conectarea la API, am creat pagina folosita pentru a cauta informatii despre melodii,
+                artsti sau albume in baza de date oferita de <a href ="https://www.spotify.com/us/">Spotify</a>, folosind metodele documentate
+				<a href ="https://developer.spotify.com/documentation/web-api/reference/object-model/">aici</a>. Din cauza modificarilor frecvente aduse API-ului folosit, am optat pentru folosirea
+				modelulul OOP implementat de biblioteca <a href="https://github.com/jwilsson/spotify-web-api-php">aceasta</a>, pe langa metoda de autentificare pe care deja o foloseam.
             </p>
             <p>
-                Odata cu optiunea de crearea a unui cont, am considerea ca urmatorul pas esential in implementare a fost sa cream o pagina de profil 
-                pentru utilizator, ce ii permite sa isi modifice parola sau adresa de e-mail si o pagina folosita pentru a cauta informatii despre melodii,
-                 artsti sau albume in baza de date oferita de <a href ="https://www.spotify.com/us/">Spotify</a>, folosind metodele documentate la <b>Ples adauga link-ul cela de github</b>.
-            </p>
-            <p>
-                Dupa aceste elemente, am implementat functionalitatile utilizatorilor autentificati, precum adaugarea de comentarii la melodiile, 
-                artistii sau albulemele selectate sau inserarea acestora in lista de favoriti a utilizatorului. Toate aceste elemente au fost, apoi, 
+                Dupa aceste elemente, am implementat functionalitatile utilizatorilor autentificati, precum adaugarea de recenzii la melodiile, 
+                artistii sau albumele cautate sau inserarea acestora in lista de favorite a utilizatorului. Toate aceste elemente au fost apoi
                 reprezentate in pagina de profil a clientului.
             </p>
+			<p>
+				Nu am ignorat nici securitatea site-ului, prevazand posibile atacuri cu SQL Injection, vulnerabilitati ale bazei de date prin introducerea de date nepermise sau trimiterea manuala
+				de cereri POST neprocesate corespunzator. Totusi, testarea a fost realizata strict manual, fara instrumente specializate, deci pot exista scapari in metoda sau vulnerabilitati ale serverului.
+			</p>
             <p>
-                Nu in ultimul rand, am realizat finalele cerinte ale proiectului, precum exportarea listei de favoriti intr-un format XSPF, 
-                a diverselor statistici in format CSV si expunerea diverselor anunturi ca flux RSS.
+                Nu in ultimul rand, am realizat finalele cerinte ale proiectului, precum exportarea listei de favorite intr-un format XSPF, 
+                a diverselor statistici in format CSV si implementarea de fluxuri RSS (flux public pentru recenzii, flux privat pentru admini de inregistrari).
             </p>
         </section>
 
         <section id="style">
-            <h3>Decizii legate de stilul paginii </h3>
+            <h3>Decizii legate de stilul paginii</h3>
             <p>
                 Inca de la inceput, scopul proiectului a fost sa cream un mediu de lucru usor de folosit pentru utilizator. Astfel, toate 
                 elementele de la pagina principala, pagina de cautare in baza de date a <a href ="https://www.spotify.com/us/">Spotify-ului</a> 
-                si stilul CSS au fost concepute sa confere un aer minimalist, dar clean. Culorile folosite au fost ales pentru a accentua
-                simplitatea design-ului si pentru a oferi un grad mare de lizibilitate. Bara de navigare este un element important, care este
-                prezent in toate paginile sit-ului web si ofera utilizatorului accesul facil la toate elementele acestuia.
-                 
+                si stilul CSS au fost concepute sa confere un aer minimalist. Culorile folosite au fost ales pentru a accentua
+                simplitatea design-ului si pentru a oferi un grad mare de lizibilitate. Bara de navigare este un element important
+				prezent in toate paginile site-ului web si ofera utilizatorului accesul facil la toate elementele acestuia.
+                Pentru a asigura uniformitatea stilului, dar si pentru usurarea unor modificari ulterioare, toate paginile apeleaza acelasi fisier CSS.
             </p>
         </section>
 
         <section id="concrete">
             <h3>Modul de utilizare</h3>
-            <p>Pagina site-ului o gasiti la <a href ="http://cubiclemon.go.ro/tw/MrM/">cubiclemon.go.ro/tw/MrM</a> . Odata ce ati intrat pe acest
-             link, veti fi intampinati cu pagina principala. Pe aceasta pagina gasiti 2 elemente principale: bara de navigare si contextul paginii.
-             In contextul paginii sunt prezentate caracteristicile sit-ului si progresul autorilor la acestea. In bara de navigare sunt plasate
-             hyperlink-uri catre cele mai importante pagini de pe sit-ul web. Acestea includ: butonul de Home(Acasa), Login+Register
-             (autentificare/inregistrare) sau cel de My Profile(profilul meu), Search(cautare) si About Us (Despre noi). Mai multe
-             descrieri amanunte despre fiecare pagina sunt prezentate in sectiunea urmatoare.
-            </p>
+            <p>Pagina principala o gasiti <a href ="http://cubiclemon.go.ro/tw/MrM/">aici</a>. Ea contine doar informatii generale despre site si o lista a functionalitatii realizate.
+			Prin intermediul butoanelor Login si Register utilizatorul neautentificat se poate conecta. Odata conectat, cele doua butoane sunt inlocuite de sectiunea My Profile. In cadrul
+			acesteia utilizatorul isi poate schimba parola si adresa de contact, poate vizualiza recenziile si favoritele proprii si are posibilitatea sa le elimine din sistem. Functionalitatea
+			de baza a site-ului este data de butonul Search, care genereaza automat o cheie de acces la API-ul Spotify si permite cautarea de Artisti, Albume si Melodii.
+			Rezultatele cautarii sunt, de cele mai multe ori, usor de diferentiat datorita pozei, copertei albumului sau mostrei audio de 30 de secunde (pentru artist, album, respectiv melodie).
+			Fiecare rezultat are o pagina proprie unde pot fi citite (public) si scrise (doar cu autentificare) recenzii. Butonul About Us va conduce la acest document.
+			</p>
         </section>
     </section>
 
@@ -134,11 +136,10 @@
         <section id="login">
             <h3>Pagina de autentificare</h3>
            <p>
-               Butonul de autentificare este primul elemente interactiv dupa butonul de Home, care doar te redirecteaza la pagina principala.
-               Odata ce clientul neautentificat apasa pe acesta, acestuia i se deschide pagina de login, unde poate sa insereze numele de utilizator
-               si parola acestuia pentru a stabili conexiunea la site. Conceptual, acesta este un formular, care verifica in baza de data daca
-               exista utilizatorul. Daca au fost gasite aceste date, o sesiune noua va fi creata si clientul va fi redirectat la pagina sa de
-               profil. In caz contrar, el va intampina mesajul "Wrong username/password combination".
+               Odata ce clientul neautentificat apasa pe butonul Login, se deschide pagina de autentificare, unde poate sa insereze numele de utilizator
+               si parola. Conceptual, acesta este un formular, care verifica in baza de date daca
+               exista utilizatorul si parola este corecta. Daca au fost gasite aceste date, o sesiune noua va fi creata si clientul va fi redirectat la pagina sa de
+               profil. In caz contrar va primi un mesaj de eroare.
 
            </p>
         </section>
@@ -147,38 +148,45 @@
             <h3>Pagina de inregistrare</h3>
            <p>
             Pagina de inregistrare are o functionalitate asemanatoare cu cea de autentificare. Clientul insereaza intr-un formular numele de 
-            utilizator, e-mailul si parola sa, iar daca acestea se regasesc in baza de date, contul sau va fi creat. De remarcat sunt restrictiile
+            utilizator, e-mailul si parola sa, iar daca acestea nu se regasesc in baza de date, contul sau va fi creat. De remarcat sunt restrictiile
             impuse asupra caracterelor ce pot fi utilizate in formular, specificate cand plasam cursorul deasupra un camp specificat, si faptul
-            ca parolele sunt criptate in baza de date prin MD5 pentru a preveni probleme de securitate. De asemenea, odata ce o persoana si-a
+            ca parolele sunt criptate in baza de date in format MD5 pentru a preveni probleme de securitate. De asemenea, odata ce o persoana si-a
             creat un cont pe pagina web, el va primi un mesaj prin e-mail, care confirma inregistrarea sa.
-
            </p>
         </section>
 
         <section id="profil">
             <h3>Pagina de profil</h3>
            <p>
-              Un utilizator autentificat va avea butonul de "My Profile" in bara de navigare in loc de butoanele Login/Register. Pe aceasta 
-              pagina el are posibilitatea sa isi schimbe parola sau e-mailul, cu conditia ca le stie pe cele anterioare. Un mesaj prin e-mail
+              Un utilizator autentificat va avea butonul de My Profile in bara de navigare in loc de butoanele Login/Register. Pe aceasta 
+              pagina el are posibilitatea sa isi schimbe parola sau e-mailul, cu conditia sa le stie pe cele anterioare. Un mesaj prin e-mail
               (cel anterior in cazul schimbarii de adresa) va fi trimis pentru a instiinta utilizatorul atunci cand este facuta o schimbare. 
-              Tot pe aceasta pagina, utilizatorul poate vizualiza review-urile pe care le-a dat melodiilor, artistilor sau albumelor, sa adauge 
-              o melodie in lista lor de favoriti, sau sa stearga una din acestea.
-
+              Tot pe aceasta pagina, utilizatorul poate vizualiza review-urile pe care le-a dat melodiilor, artistilor sau albumelor, lista de piese favorite, sau sa stearga una din acestea.
+			  In coltul din drepta jos al paginii exista butoane pentru deplasarea rapida intre sectiunile profilului in cazul inserarii unui volum mare de date.
            </p>
         </section>
 
-        <section id="serch">
+        <section id="search">
             <h3>Pagina de search</h3>
            <p>
-            Nu in ultimul rand, un click la sectiunea <a href ="http://cubiclemon.go.ro/tw/MrM/spotify/search_box.php">Search</a> redirectioneaza
-            utilizatorul la pagina unde acesta poate cauta informatii despre artisti,albume sau melodii. In aceasta pagina el va trebui sa aleaga
-            tipul elementului cautat si cateva cuvinte semnificative pentru a gasi ceea ce doreste. Dupa apasarea butonului "Search", clientului
-            ii va fi afisata o lista cu diverse elemente care reprezinta rezultatul cautarii anterioare. Aici, el va putea sa vada opiniile oferite 
-            de alte persoane si, daca este autentificat, sa isi exprime propria sa parere. Toata aceasta sectiune de cautare a fost folosita prin 
-            intermediul unui API oferit de Spotify, care poate fi documentat la pagina <b>Link ples</b>.
-
+            Un click la sectiunea <a href ="http://cubiclemon.go.ro/tw/MrM/spotify/search_box.php">Search</a> redirectioneaza
+            utilizatorul la pagina unde acesta poate cauta informatii despre artisti, albume sau melodii. In aceasta pagina el va trebui sa aleaga
+            tipul elementului cautat si cateva cuvinte semnificative pentru a gasi ceea ce doreste. Rezultatele cautarii vor fi afisate in ordinea
+            popularitatii, fiecare avand o legatura catre pagina proprie. Aici, el va putea sa vada opiniile oferite 
+            de alte persoane si, daca este autentificat, sa isi exprime propria sa parere.
            </p>
         </section>
+
+		<section id="spotify-auth">
+			<h3>Autentificarea (in fundal) la Spotify</h3>
+			<p>
+			Baza de date stocheaza doar informatii cu privire la tipul entitatilor Spotify (tip si id), nu si continutul lor. Astfel orice operatie ce necesita resurse de acest tip apeleaza mai intai
+			conectarea la API, ce se realizeaza printr-o cheie de acces valabila o ora. Aceasta nu este in mod necesar unica serverului, deoarece generarea unei chei noi nu le invalideaza pe cele vechi.
+			De asemenea, volumul maxim de trafic acceptat de serverele Spotify este imens fata de capacitatea realista a site-ului. Totusi, pentru a nu realiza apeluri inutile, fiecare cheie
+			este stocata in sesiunea utilizatorului si va fi inlocuita doar daca va expira in minutul urmator. Prevenim astfel si un eventual atac de tip DDoS ce ar putea suspenda accesul serverului
+			la API prin depasirea limitei admise de cereri.
+			</p>
+		</section>
 
     </section>
 
@@ -187,62 +195,127 @@
         <section id="PHP">
             <H3>Limbajul de programare folosit</H3>
             <p>
-                Limbajul de programare preponderent pe care am decis sa il folosim a fost PHP-ul. Acesta ne oferea posibilitatea de a realiza dinamic paginile HTML pe
-                care le vede clientul si a procesa usor interactiunea client-server. Un alt aspect, care ne-a motivat sa alegem limbajul acesta de programare, a fost 
-                accesibilitatea la o documentatie extinsa pentru acesta si usurinta pentru programatorii incepatori sa creeze proiecte de aceasta natura.
+				Am decis sa folosim exclusiv PHP (proiectul nu foloseste deloc JavaScript) pentru a muta toate sarcinile de procesare pe server.
+				Astfel, orice buton apasat conduce la o pagina HTML generata dinamic, complet construita. Acest mod de implementare faciliteaza descoperirea
+				eventualelor erori si usureaza realizarea modificarilor (chiar si cele majore).
             </p>
+			<p>
+				Pentru instalarea de biblioteci externe am apelat la <a href="https://getcomposer.org/">Composer</a>. Cu ajutorul acestuia am integrat
+				<a href="https://github.com/jwilsson/spotify-web-api-php">API-ul Spotify</a> si <a href="https://swiftmailer.symfony.com/">SwiftMailer</a>.
+			</p>
         </section>
+
         <section id="github">
             <H3>Github</H3>
             <p>
-               Pentru centralizarea ultimelor modificare in proiect am folosit <a href ="https://github.com/">Github</a>. Acesta s-a dovedit foarte folositor in evolutia
-               programului, intrucat de fiecare data cand cineva termina o parte din proiect sau o modificare a acestuia, el incarca acestea pe repository si toti ceilalti
-               membri puteau sa vada modificarile si sa continue peste acestea. De asemenea, acesta retine toate modificarile (commit-urile) facute de fiecare persoana si
-               data acestora, precum si cantitatea de cod scris de fiecare persoana. Pe langa acestea, o alta functie benefiara a Github-ului este cea de "Projects", unde 
-               fiecare contribuitor poate crea task-uri. Ele au ca scop impartirea cerintelor in categoriile "de facut","in proces de implementare" si "terminate".
+               Pentru centralizarea ultimelor modificari in proiect am folosit <a href ="https://github.com/">Github</a>. 
+			   Acesta retine toate modificarile facute de fiecare persoana si data acestora, precum si cantitatea de cod. Pe langa acestea,
+			   o alta functie utila este cea de "Projects", unde fiecare contribuitor poate crea task-uri. 
+			   Ele au ca scop impartirea cerintelor in categoriile "de facut", "in proces de implementare" si "terminate".
             </p>
             
         </section>
         <section id="db">
-            <H3>Database</H3>
+            <H3>Baza de date</H3>
             <p>
-               Pentru proiectul nostru am folosit baza de date oferita de PHP MyAdmin. Aceasta a fost folosita pentru a usura interactiunea cu serverul construit predominant
-               in PHP, oferit de catre XAMPP, prin intermediul careia este hostat. 
+              Am folosit baza de date oferita de XAMPP (MariaDB). Aceasta foloseste limbajul MySQL, cel mai popular in combinatie cu PHP. In plus, sintaxa
+              este similara cu cea din Oracle SQL invatata la cursul Baze de Date. O copie a bazei de date (doar structura) va fi disponibila pe pagina de Github a proiectului.
             </p>
             
         </section>
 
     </section>
-    <section id="URL">
-        <H3>URL</H3>
-        <p>
-          <b>Daca vrei tu sa mai scrii despre url-ul cubiclemon.go</b>
-        </p>
-        
+
+    <section id="contributions">
+        <h2>Contributii</h2>
+		<ul>
+		<li>Comun
+		<ul>
+			<li>Homepage initial</li>
+			<li>Login/Register</li>
+			<li>CSS universal</li>
+			<li>Raport Scholarly</li>
+		</ul>
+		</li>
+		<li>Leuciuc Andrei
+		<ul>
+			<li>Configurare server si gazduire site</li>
+			<li>Configurare SwiftMailer cu cont Gmail</li>
+			<li>Apelare API Spotify si cautare</li>
+			<li>Adaugare/stergere recenzii</li>
+			<li>HTML/CSS valid</li>
+		</ul>
+		</li>
+		<li>Tiperciuc Stefan
+		<ul>
+			<li>Pagina profil</li>
+			<li>Bara de navigare cu flex</li>
+			<li>Adaugare/stergere piese favorite</li>
+			<li>Export playlist CSV</li>
+		</ul>
+		</li>
+		<ul>
+       
     </section>
 
-        </section>
-        <section id="contributions">
-            <h3>Contributii</h3>
-           
-        </section>
-    </section>
-    <section id="conclusion">
-        <h2>Concluzii</h2>
-        <p>
-        
-        </p>
-    </section>
-
-    <section id="biblio-references">
+	<section id="biblio-references">
         <h2>Referinte</h2>
         <ol>
-      
+            <li property="schema:citation" role="doc-biblioentry" typeof="schema:ScholarlyArticle"  id="Scholarly-html"
+            resource="https://w3c.github.io/scholarly-html/">
+                <cite property="schema:name">
+                    <a href="https://w3c.github.io/scholarly-html/">Scholarly HTML</a>
+                </cite>,
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:name">Tzviya Siegman (Wiley)</span> &amp;
+                    <span property="schema:name">Robin Berjon</span>
+                </span>
+            </li>
+
+			<li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage"  id="composer"
+                resource="https://getcomposer.org/">
+                <cite property="schema:name">
+                    <a href="https://getcomposer.org/">Composer</a>
+                </cite>
+            </li>
+
+			<li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage"  id="spotify-object-model/"
+                resource="https://developer.spotify.com/documentation/web-api/reference/object-model/">
+                <cite property="schema:name">
+                    <a href="https://developer.spotify.com/documentation/web-api/reference/object-model/">Spotify Object Model</a>
+                </cite>
+            </li>
+
+			<li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage"  id="spotify-api"
+                resource="https://github.com/jwilsson/spotify-web-api-php/tree/master/docs">
+                <cite property="schema:name">
+                    <a href="https://github.com/jwilsson/spotify-web-api-php/tree/master/docs">Spotify API for PHP</a>
+                </cite>
+            </li>
+
+			<li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage"  id="mailer"
+                resource="https://swiftmailer.symfony.com/">
+                <cite property="schema:name">
+                    <a href="https://swiftmailer.symfony.com/">SwiftMailer</a>
+                </cite>
+            </li>
+
+            <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage"  id="xspf"
+                resource="https://www.xspf.org/quickstart/">
+                <cite property="schema:name">
+                    <a href="https://www.xspf.org/quickstart/">XSPF Standard</a>
+                </cite>
+            </li>
+
+			<li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage"  id="xampp"
+                resource="https://www.apachefriends.org/">
+                <cite property="schema:name">
+                    <a href="https://www.apachefriends.org/">XAMPP</a>
+                </cite>
+            </li>
+
         </ol>
     </section>
-
-    </section>
-
 
 </body>
 
