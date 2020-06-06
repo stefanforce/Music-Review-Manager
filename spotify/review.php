@@ -76,7 +76,6 @@ echo '<header class="main-header">
 					<ul class="main-nav-list">
                         <li><a href="../index.php">Home</a>';
 
-						
 						if (session_status() == PHP_SESSION_NONE) {
 						session_start();
 						}
@@ -88,7 +87,6 @@ echo '<header class="main-header">
 						echo '<li><a href="../profile/profilepage.php">My Profile</a>';
 						}
 						
-
                         echo '<li><a href="spotify_auth.php">Search</a>
                         <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
 					</ul>
@@ -162,7 +160,7 @@ echo 'on <a href=', $result->album->uri, '>', $result->album->name, '</a>';
 echo '<br><br>';
 if (!empty($result->preview_url)){
 $mp3 = $result->preview_url;
-echo '<audio controls controlsList="nodownload"> <source src="';
+echo '<audio controls> <source src="';
 echo $mp3, '" type="audio/mpeg">';
 echo 'Your browser does not support the audio element. </audio>';
 }
@@ -181,14 +179,15 @@ if ($results->num_rows > 0) {
   while($row = $results->fetch_assoc()) {
 	$user_id=$row["user_id"];
 	$review_text=$row["text"];
-    $user_query="SELECT USERNAME FROM USERS WHERE ID='$user_id'";
-	$user_result = mysqli_query($db, $user_query);
-	$user_name = $user_result->fetch_row();
-	$user_name = $user_name[0];
+
+	$review_date=$row["written_at"];
+	$review_date=date_create($review_date);
+	$review_date=date_format($review_date,"jS F Y");
+	$user_name = $row["user_name"];
 
 	
 	echo '<div class="review">';
-	echo '<p>', '<h3>', $user_name, ' wrote : ', '</h3>', $review_text, '</p>';
+	echo '<p>', '<h3>On <span style="color:red"> ', $review_date, '</span> ', $user_name, ' wrote : ', '</h3>', $review_text;
 	echo '<hr></div>';
   }
 } else {
