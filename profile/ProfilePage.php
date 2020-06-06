@@ -285,6 +285,43 @@ if ($my_favs->num_rows > 0) {
 ?>
 </section>
 
+
+<?php
+if (isset($_SESSION['user_role'])){
+	if ($_SESSION['user_role']=='admin'){
+		echo '<hr><br>';
+		echo '<section id="admin-commands">
+				<br>
+				<h2>Admin menu</h2>
+				<br>';
+		echo '<form class="form-horizontal" action="download1.php" method="post" name="exportrev" enctype="multipart/form-data">
+				<div class="form-group">
+					<div class="col-md-4 col-md-offset-4">
+						<input type="submit" name="ExportRev" class="btn btn-success" value="Export reviews"/>
+					</div>
+				</div>                    
+			</form>';
+		echo '<br>';
+		echo '<form class="form-horizontal" action="download2.php" method="post" name="exportfav" enctype="multipart/form-data">
+				<div class="form-group">
+					<div class="col-md-4 col-md-offset-4">
+						<input type="submit" name="ExportFav" class="btn btn-success" value="Export favourites"/>
+					</div>
+				</div>                    
+			</form>';
+		echo '<br>';
+		echo '<form class="form-horizontal" action="download3.php" method="post" name="exportusr" enctype="multipart/form-data">
+				<div class="form-group">
+					<div class="col-md-4 col-md-offset-4">
+						<input type="submit" name="ExportUsr" class="btn btn-success" value="Export users"/>
+					</div>
+				</div>                    
+			</form>';
+		echo '<br></section>';
+	}
+}
+?>
+
 <div class="jump-links">
 <form action="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php#account-controls">
     <input type="submit" value="Settings" />
@@ -295,6 +332,17 @@ if ($my_favs->num_rows > 0) {
 <form action="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php#my-favourites">
     <input type="submit" value="Favourites" />
 </form>
+
+<?php
+if (isset($_SESSION['user_role'])){
+	if ($_SESSION['user_role']=='admin'){
+		echo '<form action="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php#admin-commands">
+				<input type="submit" value="Admin" />
+			</form>';
+	}
+}
+?>
+
 </div>
 <br>
 </div>

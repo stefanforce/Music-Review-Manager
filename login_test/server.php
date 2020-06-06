@@ -63,6 +63,8 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND passcode='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
+	  $row=$results->fetch_assoc();
+	  $_SESSION['user_role']=$row["role"];
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
 	  $query = "UPDATE users SET 
