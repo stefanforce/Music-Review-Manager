@@ -63,30 +63,30 @@
             Bonus: recurgerea la un serviciu online precum Last.fm, Spotify etc.   
         </p>
     </section>
-    <section id="game">
-        <h2>Elemente de implementare a sit-ului web</h2>
+    <section id="overview">
+        <h2>Prezentarea de ansamblu</h2>
 
         <section id="preparation">
             <h3>Pregatirea mediului de lucru</h3>
            <p>Dupa ce am citit cu atentie cerinta proiectului, primul lucru pe care l-am realizat a fost initierea mediului de lucru
-            <a href ="https://github.com/stefanforce/Music-Review-Manager">Github</a>, unde am decis sa centralizam locul unde sunt gasite
-            ultimele modificari in proiect. Odata cu crearea acestui repository, am decis sa ne informam despre cum ar trebui sa arate un sit
-            de natura proiectului. O inspiratie majora a fost sit-ul <a href ="https://musicbrainz.org/">MusicBrainz</a>, care a devenit un 
-            model dupa care ne-am construit propriul website. Dupa ce am avut o idee generala despre cum ar trebui sa fie organizat acesta,
-            intrucat nu eram foarte familiarizati cu HTML-ul si CSS-ul, am urmarit diferite tutoriale despre cum trebuie construit un astfel de
-            proiect.
+            <a href ="https://github.com/stefanforce/Music-Review-Manager">Github</a>, unde am decis sa centralizam locul unde sunt 
+            gasite ultimele modificari in proiect. Odata cu crearea acestui repository, am decis sa ne informam despre cum ar trebui 
+            sa arate un sit de natura proiectului. O inspiratie majora a fost sit-ul <a href ="https://musicbrainz.org/">MusicBrainz</a>,
+            care a devenit un model dupa care ne-am construit propriul website. Dupa ce am avut o idee generala despre cum ar trebui sa
+            fie organizat acesta, intrucat nu eram foarte familiarizati cu HTML-ul si CSS-ul, am urmarit diferite tutoriale despre cum
+            trebuie construit un astfel de proiect.
            </p>
         </section>
         
         <section id="progress">
             <h3>Prezentarea progresului</h3>
             <p>
-                Urmand faza de prima documentare a proiectului, un prim pas realizat a fost sa cream un demo pentru pagina principala. Insa, precum 
-                mentionat anterior, nu am mai folosit HTML si aceasta pagina avea diferite neajunsuri. Cel mai mare dintre acestea a fost faptul 
-                ca pagina nu era responsive din cauza barei de navigare, care nu avea un aspect potrivit pe o platforma mobila. Dupa ce am creat un
-                 prim model functional si interactiv de pagina principala, pasul ulterior a fost sa cream o pagina ce permite utilizatorilor sa se 
-                 inregistreze/autentifice la sit-ul web. Clientul autentificat, la acest pas, nu avea inca permisiuni suplimentare fata de cele ale 
-                 unuia neregistrat, insa am considerea ca implementarea unui formular de login va urma sa fie beneficiara.
+                Urmand faza de prima documentare a proiectului, un prim pas realizat a fost sa cream un demo pentru pagina principala. Insa,
+                precum mentionat anterior, nu am mai folosit HTML si aceasta pagina avea diferite neajunsuri. Cel mai mare dintre acestea a
+                fost faptul ca pagina nu era responsive din cauza barei de navigare, care nu avea un aspect potrivit pe o platforma mobila.
+                Dupa ce am creat un prim model functional si interactiv de pagina principala, pasul ulterior a fost sa cream o pagina ce permite
+                utilizatorilor sa se inregistreze/autentifice la sit-ul web. Clientul autentificat, la acest pas, nu avea inca permisiuni
+                suplimentare fata de cele ale unuia neregistrat, insa am considerea ca implementarea unui formular de login va urma sa fie beneficiara.
             </p>
             <p>
                 Odata cu optiunea de crearea a unui cont, am considerea ca urmatorul pas esential in implementare a fost sa cream o pagina de profil 
@@ -99,30 +99,88 @@
                 reprezentate in pagina de profil a clientului.
             </p>
             <p>
-                Nu in ultimul rand, am realizat finalele cerinte ale proiectului, precum exportarea listei de favoriti intr-un format XSPF, a diverselor
-                statistici in format CSV si expunerea diverselor anunturi ca flux RSS.
+                Nu in ultimul rand, am realizat finalele cerinte ale proiectului, precum exportarea listei de favoriti intr-un format XSPF, 
+                a diverselor statistici in format CSV si expunerea diverselor anunturi ca flux RSS.
             </p>
         </section>
 
         <section id="style">
             <h3>Decizii legate de stilul paginii </h3>
             <p>
-                Inca de la inceput, scopul proiectului a fost sa cream un mediu de lucru usor de folosit pentru utilizator. Astfel, toate elementele de la
-                pagina principala, pagina de cautare in baza de date a <a href ="https://www.spotify.com/us/">Spotify-ului</a> si stilul CSS au fost concepute
-                sa confere un aer minimalist, dar clean. Culorile folosite au fost ales pentru a accentua simplitatea design-ului si pentru a oferi un grad mare
-                de lizibilitate. Bara de navigare este un element important, care este prezent in toate paginile sit-ului web si ofera utilizatorului accesul facil
-                la toate elementele acestuia.
+                Inca de la inceput, scopul proiectului a fost sa cream un mediu de lucru usor de folosit pentru utilizator. Astfel, toate 
+                elementele de la pagina principala, pagina de cautare in baza de date a <a href ="https://www.spotify.com/us/">Spotify-ului</a> 
+                si stilul CSS au fost concepute sa confere un aer minimalist, dar clean. Culorile folosite au fost ales pentru a accentua
+                simplitatea design-ului si pentru a oferi un grad mare de lizibilitate. Bara de navigare este un element important, care este
+                prezent in toate paginile sit-ului web si ofera utilizatorului accesul facil la toate elementele acestuia.
                  
             </p>
         </section>
 
-        <section id="">
-            <h3>
-
-            </h3>
+        <section id="concrete">
+            <h3>Modul de utilizare</h3>
+            <p>Pagina site-ului o gasiti la <a href ="http://cubiclemon.go.ro/tw/MrM/">cubiclemon.go.ro/tw/MrM</a> . Odata ce ati intrat pe acest
+             link, veti fi intampinati cu pagina principala. Pe aceasta pagina gasiti 2 elemente principale: bara de navigare si contextul paginii.
+             In contextul paginii sunt prezentate caracteristicile sit-ului si progresul autorilor la acestea. In bara de navigare sunt plasate
+             hyperlink-uri catre cele mai importante pagini de pe sit-ul web. Acestea includ: butonul de Home(Acasa), Login+Register
+             (autentificare/inregistrare) sau cel de My Profile(profilul meu), Search(cautare) si About Us (Despre noi). Mai multe
+             descrieri amanunte despre fiecare pagina sunt prezentate in sectiunea urmatoare.
+            </p>
         </section>
     </section>
 
+    <section id="implementation">
+        <h2>Detalii de implementare</h2>
+
+        <section id="login">
+            <h3>Pagina de autentificare</h3>
+           <p>
+               Butonul de autentificare este primul elemente interactiv dupa butonul de Home, care doar te redirecteaza la pagina principala.
+               Odata ce clientul neautentificat apasa pe acesta, acestuia i se deschide pagina de login, unde poate sa insereze numele de utilizator
+               si parola acestuia pentru a stabili conexiunea la site. Conceptual, acesta este un formular, care verifica in baza de data daca
+               exista utilizatorul. Daca au fost gasite aceste date, o sesiune noua va fi creata si clientul va fi redirectat la pagina sa de
+               profil. In caz contrar, el va intampina mesajul "Wrong username/password combination".
+
+           </p>
+        </section>
+        
+        <section id="register">
+            <h3>Pagina de inregistrare</h3>
+           <p>
+            Pagina de inregistrare are o functionalitate asemanatoare cu cea de autentificare. Clientul insereaza intr-un formular numele de 
+            utilizator, e-mailul si parola sa, iar daca acestea se regasesc in baza de date, contul sau va fi creat. De remarcat sunt restrictiile
+            impuse asupra caracterelor ce pot fi utilizate in formular, specificate cand plasam cursorul deasupra un camp specificat, si faptul
+            ca parolele sunt criptate in baza de date prin MD5 pentru a preveni probleme de securitate. De asemenea, odata ce o persoana si-a
+            creat un cont pe pagina web, el va primi un mesaj prin e-mail, care confirma inregistrarea sa.
+
+           </p>
+        </section>
+
+        <section id="profil">
+            <h3>Pagina de profil</h3>
+           <p>
+              Un utilizator autentificat va avea butonul de "My Profile" in bara de navigare in loc de butoanele Login/Register. Pe aceasta 
+              pagina el are posibilitatea sa isi schimbe parola sau e-mailul, cu conditia ca le stie pe cele anterioare. Un mesaj prin e-mail
+              (cel anterior in cazul schimbarii de adresa) va fi trimis pentru a instiinta utilizatorul atunci cand este facuta o schimbare. 
+              Tot pe aceasta pagina, utilizatorul poate vizualiza review-urile pe care le-a dat melodiilor, artistilor sau albumelor, sa adauge 
+              o melodie in lista lor de favoriti, sau sa stearga una din acestea.
+
+           </p>
+        </section>
+
+        <section id="serch">
+            <h3>Pagina de search</h3>
+           <p>
+            Nu in ultimul rand, un click la sectiunea <a href ="http://cubiclemon.go.ro/tw/MrM/spotify/search_box.php">Search</a> redirectioneaza
+            utilizatorul la pagina unde acesta poate cauta informatii despre artisti,albume sau melodii. In aceasta pagina el va trebui sa aleaga
+            tipul elementului cautat si cateva cuvinte semnificative pentru a gasi ceea ce doreste. Dupa apasarea butonului "Search", clientului
+            ii va fi afisata o lista cu diverse elemente care reprezinta rezultatul cautarii anterioare. Aici, el va putea sa vada opiniile oferite 
+            de alte persoane si, daca este autentificat, sa isi exprime propria sa parere. Toata aceasta sectiune de cautare a fost folosita prin 
+            intermediul unui API oferit de Spotify, care poate fi documentat la pagina <b>Link ples</b>.
+
+           </p>
+        </section>
+
+    </section>
 
     <section id="development">
         <h2>Elemente externe</h2>
@@ -172,7 +230,7 @@
     <section id="conclusion">
         <h2>Concluzii</h2>
         <p>
-      
+        
         </p>
     </section>
 
