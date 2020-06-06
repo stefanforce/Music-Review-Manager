@@ -58,6 +58,16 @@
   	</div>
 </form>
 <br>
+
+            <form class="form-horizontal" action="download1.php" method="post" name="export_csv"   
+			enctype="multipart/form-data">
+		<div class="form-group">
+				  <div class="col-md-4 col-md-offset-4">
+					  <input type="submit" name="Export" class="btn btn-success" value="Export Reviews as CSV"/>
+				  </div>
+		 </div>                    
+  </form>   
+
 </div>
 </body>
 </html>
