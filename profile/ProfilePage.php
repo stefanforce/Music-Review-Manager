@@ -220,6 +220,7 @@ if ($my_reviews->num_rows > 0) {
 	$entity_id=$row["entity_id"];
 	$entity_name=$row["entity_name"];
 	$review_text=$row["text"];
+	$review_text=nl2br($review_text);
 
 	echo '<div class="review">';
 	echo '<h3>On ';
