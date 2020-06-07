@@ -272,16 +272,24 @@ if ($my_favs->num_rows > 0) {
 		echo '<input type="hidden" name="track_id" value="', $track_id, '">';
      	echo '<input type="submit" name="delete_favourite" value="Remove"></form>';
 		echo '<br>';
+		echo '<br>';
+	
 
 		echo '</div>';
 	}
+
+	echo '<div class="fav">';
+	echo '<form method="POST" action="../spotify/XSPF_export.php">';
+	echo '<input type="submit" name="XSPF_export" value="Export as XSPF"></form>';
+	echo '</div>';
+	
   } else {
 	echo '<div class="no-favs">';
 	echo '<h3>', 'You have no favourites yet.', '</h3>';
 	echo '<br></div><br>';
   }
 
-    echo '<br>';
+	
 ?>
 </section>
 
