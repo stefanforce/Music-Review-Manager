@@ -44,6 +44,8 @@
 <p>We aim to provide our users with a way of browsing and sampling Spotify's library, saving favorites and publicly reviewing individual entries.</p>
 <p>Current status of the website is : <b>in development (no known bugs)</b></p>
 <br>
+<h2>You can view the latest user reviews in the RSS feed <a href="http://cubiclemon.go.ro/tw/MrM/spotify/review-feed.php">here</a>. We recommend using the CodeBeautify RSS viewer <a href="https://codebeautify.org/rssviewer#">here</a>.</h2>
+<br>
 <h2>Features :</h2>
 <p>☒ Minimalistic and lightweight responsive design</p>
 <p>☒ Valid HTML and CSS</p>
