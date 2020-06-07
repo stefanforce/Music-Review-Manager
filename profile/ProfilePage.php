@@ -25,7 +25,7 @@
     if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['username']);
-        header("location: ../index.html");
+        header("location: ../index.php");
     }
   ?>
 
@@ -53,7 +53,7 @@
 						?>
 
                         <li><a href="../spotify/spotify_auth.php">Search</a>
-                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+                        <li><a href="../ScholarlyHTML.html">About Us</a></li>    
 					</ul>
 				</nav>
 			</div>
@@ -293,7 +293,8 @@ if (isset($_SESSION['user_role'])){
 		echo '<section id="admin-commands">
 				<br>
 				<h2>Admin menu</h2>
-				<br>';
+				<br>
+				<h3>Data export</h3>';
 		echo '<form class="form-horizontal" action="download1.php" method="post" name="exportrev" enctype="multipart/form-data">
 				<div class="form-group">
 					<div class="col-md-4 col-md-offset-4">
@@ -317,8 +318,46 @@ if (isset($_SESSION['user_role'])){
 					</div>
 				</div>                    
 			</form>';
-		echo '<br></section>';
+		echo '<br><hr>';
+		echo '<br><h3>Alter users</h3>';
+		echo '<div class="users">';
+
+		$all_users_query="SELECT * FROM users ORDER BY username ASC";
+		$all_users = mysqli_query($db,$all_users_query);
+
+		if ($all_users->num_rows > 0) {
+			while($row = $all_users->fetch_assoc()) {
+				$user_id=$row["id"];
+				$user_name=$row["username"];
+				$user_role=$row["role"];
+				$user_mail=$row["email"];
+				
+				if($user_name != $my_name){
+				echo '<div class="user"><p>', $user_name, ' - <span style="color:red">', strtoupper($user_role), '</span> - <a href="mailto:', $user_mail, '">', $user_mail, '</a></p>';
+				
+				echo '<form method="POST" action="user_control.php">';
+				echo '<input type="hidden" name="username" value="', $user_name, '">';
+				echo '<input type="hidden" name="role" value="', $user_role, '">';
+				echo '<input type="hidden" name="id" value="', $user_id, '">';
+				echo '<input type="hidden" name="mail" value="', $user_mail, '">';
+				echo '<br>';
+				echo '<input type="submit" class="btn btn-success" name="delete_user" value="Delete user and reviews">  ';
+				echo '<input type="submit" class="btn btn-success" name="delete_reviews" value="Delete reviews">  ';
+				
+				if($user_role=='user'){
+				echo '<input type="submit" class="btn btn-success" name="promote_user" value="Promote to admin">  ';
+				}
+				if($user_role=='admin'){
+				echo '<input type="submit" class="btn btn-success" name="demote_user" value="Demote admin">  ';
+				}
+				echo '<br><hr>';
+				echo '</form>';
+				echo '</div><br>';
+				}
+			}
+		echo '</div><br></section>';
 	}
+}
 }
 ?>
 

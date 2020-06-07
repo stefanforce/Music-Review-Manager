@@ -88,7 +88,7 @@ echo '<header class="main-header">
 						}
 						
                         echo '<li><a href="spotify_auth.php">Search</a>
-                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+                        <li><a href="../ScholarlyHTML.html">About Us</a></li>    
 					</ul>
 				</nav>
 			</div>
@@ -188,6 +188,25 @@ if ($results->num_rows > 0) {
 	
 	echo '<div class="review">';
 	echo '<p>', '<h3>On <span style="color:red"> ', $review_date, '</span> ', $user_name, ' wrote : ', '</h3>', $review_text;
+
+	if (isset($_SESSION['user_role'])){
+	if ($_SESSION['user_role']=='admin'){
+		echo '<form method="POST" action="review-remover.php">';
+		echo '<input type="hidden" name="username" value="', $user_name, '">';
+		echo '<input type="hidden" name="type" value="', $search_type, '">';
+		echo '<input type="hidden" name="id" value="', $search_id, '">';
+		echo '<br>';
+		echo '<input type="submit" name="delete_review_direct" value="Delete this review"></form>';
+	}
+	else if ($username==$user_name){
+		echo '<form method="POST" action="review-remover.php">';
+		echo '<input type="hidden" name="username" value="', $username, '">';
+		echo '<input type="hidden" name="type" value="', $search_type, '">';
+		echo '<input type="hidden" name="id" value="', $search_id, '">';
+		echo '<br>';
+		echo '<input type="submit" name="delete_review_direct" value="Delete my review"></form>';
+	}
+	}
 	echo '<hr></div>';
   }
 } else {
@@ -235,6 +254,8 @@ echo '</div><br>';
 
 
 echo '<br><br></div><br>';
+echo '<div class="bottom-text"><a href="https://www.spotify.com/"><img src="../icons/Spotify_Logo_RGB_Black.png" alt="Spotify Logo"></a></div><br>';
+echo '</body></html>';
 
 }
 

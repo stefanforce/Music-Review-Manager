@@ -1,4 +1,7 @@
-<?php require_once('server.php') ?>
+<?php require_once('server.php');
+if (isset($_SESSION["username"])){
+header("location: ../profile/profilepage.php");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +33,7 @@
 						?>
 
                         <li><a href="../spotify/spotify_auth.php">Search</a>
-                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+                        <li><a href="../ScholarlyHTML.html">About Us</a></li>    
 					</ul>
 				</nav>
 			</div>
@@ -41,7 +44,7 @@
   	<h2>Login</h2>
   </div>
 	 
-  <form method="post" action="login.php">
+  <form method="post" action="login.php" autocomplete="on">
   	<?php require_once('errors.php'); ?>
   	<div class="input-group">
   		<label>Username</label>

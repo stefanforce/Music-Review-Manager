@@ -17,5 +17,5 @@ if(isset($_POST["ExportFav"]) && ($_SESSION['user_role']=='admin')){
 			}  
 			fclose($output);
 }
-else {header("location: ../index.html");}
+else {header("location: ../index.php");}
 ?>

@@ -31,7 +31,7 @@
 						?>
 
                         <li><a href="spotify_auth.php">Search</a>
-                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+                        <li><a href="../ScholarlyHTML.html">About Us</a></li>    
 					</ul>
 				</nav>
 			</div>
@@ -58,7 +58,8 @@
   	</div>
 </form>
 <br>
-
 </div>
+<br>
+<div class="bottom-text"><a href="https://www.spotify.com/"><img src="../icons/Spotify_Logo_RGB_Black.png" alt="Spotify Logo"></a></div><br>
 </body>
 </html>

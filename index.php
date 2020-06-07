@@ -33,7 +33,7 @@
 						?>
 
                         <li><a href="spotify/spotify_auth.php">Search</a>
-                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+                        <li><a href="ScholarlyHTML.html">About Us</a></li>    
 					</ul>
 				</nav>
 			</div>
@@ -42,24 +42,24 @@
 <div class="page-content">
 <h1>Our purpose</h1>
 <p>We aim to provide our users with a way of browsing and sampling Spotify's library, saving favorites and publicly reviewing individual entries.</p>
-<p>Current status of the website is : <b>in development (stable)</b></p>
+<p>Current status of the website is : <b>in development (no known bugs)</b></p>
 <br>
 <h2>Features :</h2>
-<p>☒ Basic HTML and CSS design </p>
-<p>☒ Register and Login system </p>
-<p>☒ Simple mailer service </p>
-<p>☒ Login-free connection to Spotify API </p>
-<p>☒ Spotify search with metadata </p>
-<p>☒ Track 30 second preview </p>
-<p>☒ Review submitting and reading </p>
-<p>☒ Simple user control panel (change password/mail) </p>
-<p>☒ Review deletion </p>
-<p>☒ In-depth security testing </p>
-<p>☒ Favorites section </p>
-<p>☒ Valid HTML and actually responsive CSS </p>
+<p>☒ Minimalistic and lightweight responsive design</p>
+<p>☒ Valid HTML and CSS</p>
+<p>☒ Account system</p>
+<p>☒ Mailer service</p>
+<p>☒ No sign in required Spotify search</p>
+<p>☒ Spotify result preview for easy identification</p>
+<p>☒ Spotify Entity reviewing</p>
+<p>☒ Favourite tracks list</p>
+<p>☒ Account management</p>
+<p>☒ Review and favourite management</p>
+<p>☒ Security testing</p>
+<p>☒ Admin database export and control panel</p>
+<p>☒ ScholarlyHTML report</p>
+<p>☐ Extensive metadata </p>
 <p>☐ Review RSS feed </p>
-<p>☐ Full metadata </p>
-<p>☐ Searchable/linkable public user pages </p>
 <br>
 </div>
 <br><br>

@@ -49,7 +49,7 @@ echo '<header class="main-header">
 						
 
                         echo '<li><a href="spotify_auth.php">Search</a>
-                        <li><a href="https://github.com/stefanforce/Music-Review-Manager">About Us</a></li>    
+                        <li><a href="../ScholarlyHTML.html">About Us</a></li>    
 					</ul>
 				</nav>
 			</div>

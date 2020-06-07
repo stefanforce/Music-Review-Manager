@@ -15,7 +15,7 @@ $track_id=$_POST['track_id'];
 $delete_query="DELETE FROM favourites WHERE username='$username' AND track_id='$track_id'";
 
 if (mysqli_query($db, $delete_query)){
-	header("location: ../profile/ProfilePage.php");
+	header("location: ../profile/ProfilePage.php?#my-favourites");
 }
 }
 }
