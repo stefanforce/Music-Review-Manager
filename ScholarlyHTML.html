@@ -102,7 +102,7 @@
 			</p>
             <p>
                 Nu in ultimul rand, am realizat finalele cerinte ale proiectului, precum exportarea listei de favorite intr-un format XSPF, 
-                a diverselor statistici in format CSV si implementarea unui flux RSS de recenzii.
+                a diverselor statistici in format CSV (in cadrul modulului de administrator) si implementarea unui flux RSS de recenzii (http://cubiclemon.go.ro/tw/MrM/spotify/review-feed.php).
             </p>
         </section>
 
@@ -163,6 +163,10 @@
               (cel anterior in cazul schimbarii de adresa) va fi trimis pentru a instiinta utilizatorul atunci cand este facuta o schimbare. 
               Tot pe aceasta pagina, utilizatorul poate vizualiza review-urile pe care le-a dat melodiilor, artistilor sau albumelor, lista de piese favorite, sau sa stearga una din acestea.
 			  In coltul din drepta jos al paginii exista butoane pentru deplasarea rapida intre sectiunile profilului in cazul inserarii unui volum mare de date.
+           </p>
+           <p>
+               In cazul in care utilizatorul autentificat are gradul de admin, pagina sa de profil are o sectiune in plus. In aceasta se pot exporta date de pe server in format csv, se pot vedea
+               toti utilizatorii inregistrati (admini sau nu) si pot fi facute modifcari asupra lor (stergere cont, stergere recenzii, promovare/concediere admin).
            </p>
         </section>
 
@@ -243,7 +247,10 @@
 			<li>Configurare SwiftMailer cu cont Gmail</li>
 			<li>Apelare API Spotify si cautare</li>
 			<li>Adaugare/stergere recenzii</li>
-			<li>HTML/CSS valid</li>
+            <li>HTML/CSS valid</li>
+            <li>Testare securitate</li>
+            <li>Modul admin</li>
+            <li>Feed RSS valid</li>
 		</ul>
 		</li>
 		<li>Tiperciuc Stefan
@@ -251,7 +258,9 @@
 			<li>Pagina profil</li>
 			<li>Bara de navigare cu flex</li>
 			<li>Adaugare/stergere piese favorite</li>
-			<li>Export playlist CSV</li>
+            <li>Export date CSV</li>
+            <li>Diagrame</li>
+            <li>Export favorite XSPF</li>
 		</ul>
 		</li>
 		<ul>
@@ -314,6 +323,14 @@
                 </cite>
             </li>
 
+            <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage"  id="w3s"
+                resource="https://www.w3schools.com/">
+                <cite property="schema:name">
+                    <a href="https://www.w3schools.com/">W3Schools</a>
+                </cite>
+            </li>
+
+            
         </ol>
     </section>
 
