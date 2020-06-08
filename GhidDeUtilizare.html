@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ghid de utilizare - MrM</title>
+    <link rel="stylesheet" href="https://w3c.github.io/scholarly-html/css/scholarly.min.css">
+    <script src="https://w3c.github.io/scholarly-html/js/scholarly.min.js"></script>
+</head>
+
+<body prefix="schema: http://schema.org" style="font-family: calibri !important; font-size: 14pt;">
+    <header>
+        <h1>Ghid de utilizare MrM</h1>
+    </header>
+
+    <div role="contentinfo">
+        <dl>
+            <dt>Autori</dt>
+            <dd>
+                <a href="https://github.com/FluffyPanda69">Leuciuc Andrei-Dragos</a>
+                <a href="https://github.com/stefanforce">Tiperciuc Stefan</a><br>
+            </dd>
+        </dl>
+    </div>
+
+    <section id="Accesarea site-ului">
+        <h2>Accesarea site-ului</h2>
+        <p>
+          Site-ul proiectului poate fi accesat la pagina <a href="http://cubiclemon.go.ro/tw/MrM/">Music Review Manager</a>. Aceasta pagina este
+          gazduita de catre <a href="https://github.com/FluffyPanda69">Leuciuc Andrei-Dragos</a> pe calculatorul propriu, ceea ce inseamna
+          ca va putea fi utilizatata doar cat timp este deschisa calea de acces catre server.
+        </p>
+    </section>
+
+    <section id="Pagina principala">
+        <h2>Pagina principala</h2>
+        <p>
+          Odata ce utilizatorul acceseaza link-ul paginii mentionate anterior, el va fi intampinat cu pagina propriu-zisa a site-ului. 
+          Aceasta este alcatuita din 3 sectiuni: bara de navigare, contextul paginii si subsolul ei.
+        </p>
+        <section id="Contextul paginii">
+            <h2>Contextul paginii</h2>
+            <p>
+              In contextul paginii se regasesc urmatoarele: scopul paginii, vizualizarea ultimelor review-uri si 
+              functionalitatile site-ului. In cadrul sectiunii "Our purpose" (scopul nostru) este prezentat succint ceea ce oferim prin site-ul 
+              nostru web si statutul curent de implementare al site-ului. Prin intermediul butonului "here", plasat dedesuptul statutului, 
+              utilizatorului i se deschide o pagina sub forma unui RSS feed, unde poate vizualiza ultimele recenzii folosite de utilizatorii paginii.
+              Ultimul element al acestei sectiuni este lista de functionalitati a site-ului unde clientul poate vedea ce elemente se regasesc in implementarea
+              acestora.
+            </p>
+            
+        </section>
+        <section id="Subsolul paginii">
+            <h2>Subsolul paginii</h2>
+            <p>
+             In subsolul paginii sunt prezentate informatii cu scopul lamuririi posibilelor neclaritati ce pot aparea folosind pagina web, cat si informatii
+             de contact a autorilor.
+            </p>
+            
+        </section>
+        <section id="Bara de navigare">
+            <h2>Bara de navigare</h2>
+            <p>
+             In bara de navigare sunt prezente urmatoarele elemente (de la stanga la dreapta) : emblema paginii, titlul acesteia si butoanele de "Home",
+             "Login" si "Register", sau "My profile", "Search", "About Us".
+            </p>
+        </section>    
+        
+        </section>
+
+        <section id="Butonul de Home">
+            <h2>Home</h2>
+            <p>
+            Butonul de home are o functionalitate simpla. De fiecare data cand este apasat, el redirecteaza utilizatorul la pagina principala, 
+            aflata la URL-ul <a href ="http://cubiclemon.go.ro/tw/MrM/index.php">"cubiclemon.go.ro/tw/MrM/index.php</a>.
+            </p>
+            
+        
+        </section>
+        <section id="Butonul de Login">
+            <h2>Login</h2>
+            <p>
+            Butonul de login apare numai atunci cand utilizatorul nu este autentificat. Apasarea acestuia deschide pagina <a href ="http://cubiclemon.go.ro/tw/MrM/login_test/login.php">"../login.php"</a>, unde clientul
+            se poate autentifica. Aceasta pagina contine un formular, unde persoanele insereaza numele de utilizator, parola si apoi apasa tasta ENTER sau 
+            butonul de "Login" aflat in josul formularului. Daca cineva nu are deja cont pe site-ul web, el se poate inregistra apasand butonul "Sign up",
+            care il redirectioneaza pe pagina <a href ="http://cubiclemon.go.ro/tw/MrM/login_test/register.php">"../register.php"</a>. Daca numele si parola nu se regasesc in baza de date, utilizatorului ii apare eroarea "Wrong
+            username/password combination", iar daca una din ele nu este mentionata, eroarea "X is required" apare. 
+            </p>
+            
+        </section>
+
+        <section id="Butonul de Register">
+            <h2>Register</h2>
+            <p>
+            Pe langa butonul de login, clientul neautentificat are acces si la butonul de "Register", unde isi poate crea un cont. Cand utilizatorul 
+            apasa acest buton i se deschide pagina <a href ="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php">"../profilepage.php"</a>"../register.php", unde ii apare formularul de inregistrare. Acesta are campurile "Username", cu 
+            restrictia ca are lungimea minima de 4 caractere, care sa fie alfa-numerice sau (. /- / _), "E-mail", "Passsword", care este de minim 6 caractere
+            cu aceeasi restrictie,ascunsa prin caracterele "." si cel de "Confirm password", unde clientul trebuie sa scrie acceasi parola pe care a inserat-o anterior. Daca are deja cont,
+            clientul poate apasa pe butonul "Sign in" sa mearga la pagina de autentificare. Vor aparea urmatoarele erori daca utilizatorul nu insereaza informatiile
+            corecte in formular: "The two passwords don't match", cand cele doua parole nu sunt exact lafel, "X is required", daca numele de utilizator, parola sau 
+            e-mailul lipsesc si "Username already exists" daca exista deja un utlizator cu username-ul acela. Odata ce un cont este creat, datele sunt inserate in baza de date (parola este 
+            codificata inainte de trimitere pentru a evita probleme de securitate) si utilizatorul va primi un e-mail, care confirma inregistrarea sa pe site.
+            </p>
+            
+        </section>
+
+        <section id="Butonul de My profile">
+            <h2>My profile</h2>
+            <p>
+           Daca utilizatorul este autentificat, butonul de "My profile" va inlocui butoanele "Register" si "Login". Pagina <a href ="http://cubiclemon.go.ro/tw/MrM/profile/profilepage.php">"../profilepage.php"</a>, deschisa cand apasam acest
+           buton, are 4 sectiunea: cea de settings, reviews, favourites si, in caz special, admin. Acestea pot fi accesate usor folosind butoanele din dreapta jos a ecranului,
+           care te duc exact in locul din pagina unde se gasesc. Dupa ce clientul a fost intampinat cu mesajul "Welcome X", X fiind numele de utilizator al acestuia, el poate apasa
+           butonul de logout pentru a se deautentifica. La sectiunea settings, utilizatorul are posibilitatea sa isi modifice parola si e-mailul curent, cu conditia ca le cunoaste pe 
+           cele anterioare. Aceleasi restrictii sunt aplicate si pentru cele noi. Cand o modificare este facuta, utilizatorul va primi un mesaj(pe e-mailul vechi in cazul adresei), ca 
+           s-a efectuat o modificare.
+            </p>
+            <p>
+           Sectiunea de reviews afiseaza toate recenziile pe care le-a oferit utilizatorul. Fiecare element din lista de review-uri poate fi accesat apasand pe partea subliniata a recenziei
+           si poate fi eliminat din lista apasand butonul "Delete this review".
+            </p>
+            <p>
+            Portiunea de favourites este construita asemanator cu cea de review-uri, avand lista de melodii preferate ale utilizatorului. De asemenea, orice element poate fi apasat sa redirectioneze
+            clientul catre pagina melodiei sau sters din lista cu butonul "Remove". Persoanele mai pot, pe langa acestea, sa exporte in format XSPF acest playlist prin butonul din josul acestei sectiuni,
+            care deschide pagina XSPF aferenta.
+                 </p>
+                 <p>
+            Sectiunea de admin va aparea doar pentru utilizatorii carora le-a fost oferit acest rol de catre un alt adminstrator al paginii. Acesta are functi aditionale, precum: exportul de recenzii,
+            favourites si user, care se gasesc in bazele de date si modificarea unor date oferite de alti utilizatori, precum stergerea contului propriu-zis, a recenziilor sale sau promovarea/ retrogradarea
+            statutului de admin al acestuia.
+                         </p>
+        </section>
+
+        <section id="Butonul de Search">
+            <h2>Search</h2>
+            <p>
+                Apasand butonul de search, utlizatorul este trimis la pagina <a href ="http://cubiclemon.go.ro/tw/MrM/spotify/search_box.php">"../search_box.php"</a>, unde poate cauta informatii in baza de date oferita de Spotify. Acolo, el va fi intampinat cu un formular unde
+                trebuie sa caute tipul elementului cautat(Artist/ Album/ Melodie) si cateva cuvinte semnificative pentru a gasi ceea ce doreste. Dupa ce apasa butonul "Search" din josul formularului, baza de date 
+                Spotify va cauta potriviri pentru ce a inserat utilizatorul si il va redirectiona la pagina <a href ="http://cubiclemon.go.ro/tw/MrM/spotify/spotify_search.php">"../spotify_search.php"</a>. Acolo, el va vedea o lista de artisti/ albume/ melodii ce se potrivesc cautarii,
+                oferind numele si poza lor. Utilizatorul poate apoi apasa pe butonul "See reviews and write your own" sa acceseze pagina unde au fost scrise recrenziile tuturor utilizatorile pentru artist/ album/ melodie 
+                si, daca este autentificat si tipul cautarii a fost o melodie, o poate adauga in lista de favorite prin butonul "Add to favourites". Daca utilizatorul este autentificat, cand apasa butonul "See reviews and
+                write your own" va fi trimis pe o pagina unde poate vedea toate recenziile oferite de alti utilizatori si data cand au fost puse si, in jocul paginii, va fi instiintat ca trebuie sa se autentifice daca doreste
+                sa isi exprime propria opinie. Daca pagina nu are nici un review, va fi scris mesajul "There are no reviews yet". In spatiul unde utilizatorul poate sa scrie review-ul sunt permise intre 10 si 5000 de caractere 
+                de orice tip, evitand SQL injection si, cand utilizatorul a terminat recenzia el trebuie sa apese pe "Submit" pentru a finaliza operatia. 
+            </p>
+        </section>
+
+        <section id="Butonul About Us">
+            <h2>About Us</h2>
+            <p>
+            Daca utilizatorul apasa ultimul buton din bara de navigara, <a href ="http://cubiclemon.go.ro/tw/MrM/ScholarlyHTML.html">"Abous Us"</a>, el va fi redirectionat catre pagina noastra de ScholarlyHtml, unde poate afla mai multe despre evolutia proiectului sau detalii de implementare.
+            </p>
+        </section> 
+    </section>
+
+    
+</body>
+
+</html>

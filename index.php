@@ -42,7 +42,7 @@
 <div class="page-content">
 <h1>Our purpose</h1>
 <p>We aim to provide our users with a way of browsing and sampling Spotify's library, saving favorites and publicly reviewing individual entries.</p>
-<p>Current status of the website is : <b>in development (no known bugs)</b></p>
+<p>Current status of the website is : <b>finished (no known bugs)</b></p>
 <br>
 <h2>You can view the latest user reviews in the RSS feed <a href="http://cubiclemon.go.ro/tw/MrM/spotify/review-feed.php">here</a>. We recommend using the CodeBeautify RSS viewer <a href="https://codebeautify.org/rssviewer#">here</a>.</h2>
 <br>
@@ -60,8 +60,7 @@
 <p>☒ Security testing</p>
 <p>☒ Admin database export and control panel</p>
 <p>☒ ScholarlyHTML report</p>
-<p>☐ Extensive metadata </p>
-<p>☐ Review RSS feed </p>
+<p>☒ Review RSS feed </p>
 <br>
 </div>
 <br><br>

@@ -8,7 +8,7 @@ if (mysqli_connect_errno($db)) {
  
 $sql = "SELECT * FROM reviews ORDER BY id DESC LIMIT 10";
 $query = mysqli_query($db,$sql);
- 
+  
 header("Content-type: text/xml");
  
 echo "<?xml version='1.0' encoding='UTF-8'?>
