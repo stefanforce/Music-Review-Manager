@@ -43,7 +43,6 @@ header("location: ../profile/profilepage.php");
   <div class="header">
   	<h2>Login</h2>
   </div>
-	 
   <form method="post" action="login.php" autocomplete="on">
   	<?php require_once('errors.php'); ?>
   	<div class="input-group">

@@ -90,7 +90,6 @@ echo '<div class="searched_for"><h2>', 'Searched for ', $query_type, ' : ', $que
 echo '<div class="page-content">';
 $results = $api->search($query, $query_type);
 
-
 if ($query_type=='artist'){
 foreach ($results->artists->items as $resitem) {
 	echo '<div class="result">';
@@ -163,14 +162,12 @@ foreach ($results->tracks->items as $resitem) {
 	foreach($resitem->artists as $author) {echo '<a href=', $author->uri, '>', $author->name, '</a>', '  ';}
 	echo 'on <a href=', $resitem->album->uri, '>', $resitem->album->name, '</a>';
 	
-
 	if (isset($_SESSION["username"])){
 	$username=$_SESSION['username'];
     $dupe_checked_query="SELECT * from favourites where username='$username' and track_id='$track_id'";
     $dupe_checker_result=mysqli_query($db,$dupe_checked_query);
 	$result_number=mysqli_num_rows($dupe_checker_result);
 	
-
 	if ($result_number==0){
 		echo '<form method="POST" action="favourites_saver.php">';
 		

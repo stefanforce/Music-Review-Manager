@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="../index.css">
 </head>
 <body>
-  
+
   <?php
   if (isset($_SESSION['username'])) {
         header('location: ../profile/profilepage.php');
@@ -47,7 +47,7 @@
   <div class="header">
   	<h2>Register</h2>
   </div>
-	
+
   <form method="post" action="register.php">
   	<?php require_once('errors.php'); ?>
   	<div class="input-group">

@@ -130,7 +130,6 @@ echo '<br><br>';
 echo '</div><br>';
 }
 
-
 else if ($search_type=='album'){
 echo '<div class="result">';
 echo '<br>';
@@ -148,7 +147,6 @@ echo '<img src="', $image, '" alt="Album image">';
 echo '<br><br>';
 echo '</div><br>';
 }
-
 
 else if ($search_type=='track'){
 echo '<div class="result">';
@@ -252,7 +250,6 @@ echo ' to write reviews</h3>';
 }
 
 echo '</div><br>';
-
 
 echo '<br><br></div><br>';
 echo '<div class="bottom-text"><a href="https://www.spotify.com/"><img src="../icons/Spotify_Logo_RGB_Black.png" alt="Spotify Logo"></a></div><br>';

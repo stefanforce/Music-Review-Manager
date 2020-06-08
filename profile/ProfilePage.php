@@ -301,7 +301,7 @@ if (isset($_SESSION['user_role'])){
 		echo '<hr><br>';
 		echo '<section id="admin-commands">
 				<br>
-				<h2>Admin menu</h2>
+				<h2 style="color:red;">Admin menu</h2>
 				<br>
 				<h3>Data export</h3>';
 		echo '<form class="form-horizontal" action="download1.php" method="post" name="exportrev" enctype="multipart/form-data">

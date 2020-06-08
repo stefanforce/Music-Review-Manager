@@ -49,7 +49,6 @@
 			</div>
 </header>
 
-
 <div class="content">
   	<?php if (isset($_SESSION['success'])) : ?>
       <div class="error success" >
@@ -68,6 +67,5 @@
 		<p> <a href="../profile/ProfilePage.php" style="color: blue;">My Profile</a/></p>
     <?php endif ?>
 </div>
-		
 </body>
 </html>

@@ -62,7 +62,6 @@ echo '<br>';
 echo '<div class="page-content">';
 echo '<br>';
 
-
 $check_query="SELECT * FROM REVIEWS WHERE USER_ID='$current_user' AND TYPE='$search_type' AND ENTITY_ID='$search_id'";
 $check_result=mysqli_query($db, $check_query);
 $result_number=mysqli_num_rows($check_result);
@@ -90,7 +89,6 @@ echo 'Oops ! After processing, your review became too short. Avoid using tags as
 $review_link='review.php' . '?type=' . $search_type . '&id=' . $search_id;
 echo '<br><br><a href=', $review_link, '> Go back </a><br><br>';
 }
-
 }
 
 echo '</div></body>';
