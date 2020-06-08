@@ -17,13 +17,12 @@ $username=$_SESSION['username'];
 $sql = "SELECT * FROM favourites where username='$username'";
 $query1 = mysqli_query($db,$sql);
   
-
 header("Content-type: text/xspf");
-
  
 echo "<?xml version='1.0' encoding='UTF-8'?>
 <playlist version='1' xmlns='http://xspf.org/ns/0/'>
-    <trackList>";
+    <trackList> 
+    "; 
 
     while($row = $query1->fetch_assoc()){
         $username=$row["username"];
@@ -38,14 +37,19 @@ echo "<?xml version='1.0' encoding='UTF-8'?>
         break;
         }
        
-        
+        if (!is_null($mp3))
+        {
         echo '<track><location>',
-        $mp3
-        
-        ,'</location></track>';
+        $mp3,
+        '</location>
+        <title>',
+        $track_name,
+        '</title></track>
+        ';
         
         }
+    }
     
- echo"   </trackList>
+ echo"</trackList>
 </playlist>";
 ?>
