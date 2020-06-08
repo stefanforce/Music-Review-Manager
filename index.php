@@ -5,6 +5,7 @@
 <title>Music Review Manager</title>
 <link rel="icon" href="icons/android-chrome-512x512.png" type="image/x-icon"/>
 <meta name="description" content="Music Review Manager">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="index.css">
 </head>
 
@@ -44,7 +45,7 @@
 <p>We aim to provide our users with a way of browsing and sampling Spotify's library, saving favorites and publicly reviewing individual entries.</p>
 <p>Current status of the website is : <b>finished (no known bugs)</b></p>
 <br>
-<h2>You can view the latest user reviews in the RSS feed <a href="http://cubiclemon.go.ro/tw/MrM/spotify/review-feed.php">here</a>. We recommend using the CodeBeautify RSS viewer <a href="https://codebeautify.org/rssviewer#">here</a>.</h2>
+<h2 class="rss-info">You can view the latest user reviews in the <a href="http://cubiclemon.go.ro/tw/MrM/spotify/review-feed.php">RSS feed</a>. We recommend using the <a href="https://codebeautify.org/rssviewer#">CodeBeautify RSS viewer</a>.</h2>
 <br>
 <h2>Features :</h2>
 <p>☒ Minimalistic and lightweight responsive design</p>
@@ -61,9 +62,8 @@
 <p>☒ Admin database export and control panel</p>
 <p>☒ ScholarlyHTML report</p>
 <p>☒ Review RSS feed </p>
-<br>
 </div>
-<br><br>
+<br>
 <hr>
 <div class="bottom-text">
 <p>This website is an open-source project, you are free to copy and modify the source code for any purpose. It is a work in progress and we do not guarantee code quality or data security. We do not use cookies or store any personal data besides that which you directly provide us. The data is never shared with third-parties and can be deleted at your request. For any questions or requests <a href = "mailto:musicreviewmanager@gmail.com">contact us</a>.</p>
