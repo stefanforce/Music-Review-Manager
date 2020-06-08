@@ -17,7 +17,9 @@ $username=$_SESSION['username'];
 $sql = "SELECT * FROM favourites where username='$username'";
 $query1 = mysqli_query($db,$sql);
   
+
 header("Content-type: text/xspf");
+
  
 echo "<?xml version='1.0' encoding='UTF-8'?>
 <playlist version='1' xmlns='http://xspf.org/ns/0/'>

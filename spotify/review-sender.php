@@ -17,9 +17,13 @@ $current_user=$current_user[0];
 $search_type=$_POST['type'];
 $search_id=$_POST['id'];
 $entity_name=$_POST['entity_name'];
-$review_text=mysqli_real_escape_string($db,$_POST['write_review']);
+
+$review_text=$_POST['write_review'];
+$review_text=mysqli_real_escape_string($db,$review_text);
 $review_text=strip_tags($review_text);
 $review_text=htmlspecialchars($review_text);
+$review_text=nl2br($review_text);
+
 $final_length=strlen($review_text);
 
 echo '<html lang="en"><head>';

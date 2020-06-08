@@ -50,6 +50,7 @@ echo '<br>';
 
 if (mysqli_query($db, $delete_query)){
 	echo 'Your review was succesfully removed !';
+	header("location: ../profile/profilepage.php?#my-reviews");
 }
 else {
 	echo 'There was a problem removing your review...';

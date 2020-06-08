@@ -179,6 +179,7 @@ if ($results->num_rows > 0) {
   while($row = $results->fetch_assoc()) {
 	$user_id=$row["user_id"];
 	$review_text=$row["text"];
+	$review_text=nl2br($review_text);
 
 	$review_date=$row["written_at"];
 	$review_date=date_create($review_date);
