@@ -8,5 +8,3 @@ Grupa 2A5
 Leuciuc Andrei, Tiperciuc Stefan
 
 Coordonator laborator - Varlan Cosmin
-
-LIVE PREVIEW (XAMPP de pe PC-ul propriu, nu va fi online mereu) : http://cubiclemon.go.ro/tw/MrM/
